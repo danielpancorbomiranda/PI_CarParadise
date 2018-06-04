@@ -1,0 +1,3 @@
+- Lo agregué a esta carpeta para que en un futuro pudiera generar PDFs de listados descargables.
+- Actualmente no lo aplico al proyecto.
+- Lo documentos son bajamos de internet para ver y estudiar su uso.

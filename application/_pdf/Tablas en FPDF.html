@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://desarrolloweb.com/articulos/tablas-fpdf.html -->
+<html class="no-js" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <title>Tablas en FPDF</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="apple-touch-fullscreen" content="no">
+
+<link rel="shortcut icon" href="https://desarrolloweb.com/img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://desarrolloweb.com/images/icono_DW.png">
+
+<link href="./Tablas en FPDF_files/css" rel="stylesheet" type="text/css">
+<meta name="author" content="DesarrolloWeb.com">
+<meta name="owner" content="Guiarte Multimedia S.L.">
+<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="./Tablas en FPDF_files/estilo2015.css">
+
+
+<script src="./Tablas en FPDF_files/cb=gapi.loaded_1" async=""></script><script async="" src="./Tablas en FPDF_files/analytics.js.descarga"></script><script id="facebook-jssdk" src="./Tablas en FPDF_files/all.js.descarga"></script><script id="twitter-wjs" src="./Tablas en FPDF_files/widgets.js.descarga"></script><script src="./Tablas en FPDF_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./Tablas en FPDF_files/plusone.js.descarga" gapi_processed="true">
+  {lang: 'es'}
+</script><meta property="og:title" content="Tablas en FPDF">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.desarrolloweb.com/articulos/tablas-fpdf.html">
+<meta property="og:image" content="http://www.desarrolloweb.com/images/logo-desarrolloweb100x60.gif"><meta property="og:site_name" content="DesarrolloWeb.com">
+<meta property="fb:admins" content="100001063850916">
+<script>
+var base_dir = "https://desarrolloweb.com";
+</script>
+
+<script src="./Tablas en FPDF_files/secureAnonymousFramework"></script><script type="text/javascript" charset="utf-8" async="" src="./Tablas en FPDF_files/button.90facfc7dd48c9c8c4f1fc94e137b515.js.descarga"></script><style type="text/css">* html #li_ui_li_gen_1494919012388_0 a#li_ui_li_gen_1494919012388_0-link{height:1% !important;}#li_ui_li_gen_1494919012388_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1494919012388_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1494919012388_0 a#li_ui_li_gen_1494919012388_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1494919012388_0 a#li_ui_li_gen_1494919012388_0-link:link, #li_ui_li_gen_1494919012388_0 a#li_ui_li_gen_1494919012388_0-link:visited, #li_ui_li_gen_1494919012388_0 a#li_ui_li_gen_1494919012388_0-link:hover, #li_ui_li_gen_1494919012388_0 a#li_ui_li_gen_1494919012388_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1494919012388_0 a#li_ui_li_gen_1494919012388_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-webkit-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-webkit-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#0077b5 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important; background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1494919012388_0.hovered #li_ui_li_gen_1494919012388_0-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0369a0), color-stop(100%,#0369a0)) !important; background-image: -webkit-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1494919012388_0.clicked #li_ui_li_gen_1494919012388_0-title, #li_ui_li_gen_1494919012388_0.down #li_ui_li_gen_1494919012388_0-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#066094), color-stop(100%,#066094)) !important; background-image: -webkit-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title{}.IN-shadowed #li_ui_li_gen_1494919012388_0.hovered #li_ui_li_gen_1494919012388_0-title{}.IN-shadowed #li_ui_li_gen_1494919012388_0.clicked #li_ui_li_gen_1494919012388_0-title, .IN-shadowed #li_ui_li_gen_1494919012388_0.down #li_ui_li_gen_1494919012388_0-title{}#li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title-text, #li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1494919012388_0.hovered #li_ui_li_gen_1494919012388_0-title-text, #li_ui_li_gen_1494919012388_0.hovered #li_ui_li_gen_1494919012388_0-title-text *{color:#fff !important;}#li_ui_li_gen_1494919012388_0.clicked #li_ui_li_gen_1494919012388_0-title-text, #li_ui_li_gen_1494919012388_0.down #li_ui_li_gen_1494919012388_0-title-text, #li_ui_li_gen_1494919012388_0.clicked #li_ui_li_gen_1494919012388_0-title-text *, #li_ui_li_gen_1494919012388_0.down #li_ui_li_gen_1494919012388_0-title-text *{color:#fff !important;}#li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title #li_ui_li_gen_1494919012388_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important; background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title-text, .success #li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1494919012388_0 #li_ui_li_gen_1494919012388_0-title{}.success #li_ui_li_gen_1494919012388_0.hovered #li_ui_li_gen_1494919012388_0-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0369a0), color-stop(100%,#0369a0)) !important; background-image: -webkit-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1494919012388_0.hovered #li_ui_li_gen_1494919012388_0-title-text, .success #li_ui_li_gen_1494919012388_0.hovered #li_ui_li_gen_1494919012388_0-title-text *{color:#fff !important;}.success #li_ui_li_gen_1494919012388_0.clicked #li_ui_li_gen_1494919012388_0-title, .success #li_ui_li_gen_1494919012388_0.down #li_ui_li_gen_1494919012388_0-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#066094), color-stop(100%,#066094)) !important; background-image: -webkit-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1494919012388_0.clicked #li_ui_li_gen_1494919012388_0-title-text, .success #li_ui_li_gen_1494919012388_0.down #li_ui_li_gen_1494919012388_0-title-text, .success #li_ui_li_gen_1494919012388_0.clicked #li_ui_li_gen_1494919012388_0-title-text *, .success #li_ui_li_gen_1494919012388_0.down #li_ui_li_gen_1494919012388_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1494919012388_0.clicked #li_ui_li_gen_1494919012388_0-title, .IN-shadowed .success #li_ui_li_gen_1494919012388_0.down #li_ui_li_gen_1494919012388_0-title{}#li_ui_li_gen_1494919012460_1-container.IN-top {display:inline-block !important;overflow:visible !important;position:relative !important;height:42px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1494919012460_1.IN-top {display:inline-block !important;height:42px !important;width:60px !important;text-align:center !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:-207px -470px !important;}#li_ui_li_gen_1494919012460_1-content.IN-top {display:inline !important;font-size:16px !important;color:#4e4e4e !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:38px !important;}#li_ui_li_gen_1494919012460_1-container.IN-empty #li_ui_li_gen_1494919012460_1-inner.IN-top {background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -560px !important;background-size:initial !important;overflow:hidden !important;margin:4px auto 0 auto !important;width:28px !important;height:28px !important;display:block !important;}#li_ui_li_gen_1494919012460_1-container.IN-empty #li_ui_li_gen_1494919012460_1-content.IN-top {text-indent:-999px !important;display:inline-block !important;}#li_ui_li_gen_1494919012460_1-container.IN-hidden #li_ui_li_gen_1494919012460_1 {display:none !important;}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body>
+	<div id="container">
+   	<header>
+      <div id="logo">
+                <a href="http://desarrolloweb.com/">
+          <img src="./Tablas en FPDF_files/logo.png" alt="Logo de DesarrolloWeb.com">
+        </a>
+      </div>
+      <div id="iconosredes20">
+        <a href="http://www.facebook.com/desarrollowebcom/"><img src="./Tablas en FPDF_files/1x1.png" class="sprite" alt="facebook" id="fb20"></a>
+        <a href="http://www.twitter.com/deswebcom/"><img src="./Tablas en FPDF_files/1x1.png" class="sprite" alt="twitter" id="tw20"></a>
+        <a href="https://plus.google.com/111428356405969326386/posts"><img src="./Tablas en FPDF_files/1x1.png" class="sprite" alt="google plus" id="gp20"></a>
+        <a href="http://www.youtube.com/desarrollowebcom"><img src="./Tablas en FPDF_files/1x1.png" class="sprite" alt="youtube" id="yt20"></a>
+        <a href="http://www.desarrolloweb.com/rss/general_rss.php"><img src="./Tablas en FPDF_files/1x1.png" class="sprite" alt="rss" id="rss20"></a>
+      </div>
+
+      <div id="buscador">
+        <form action="https://desarrolloweb.com/buscar.php" id="cse-search-box">
+          <div>
+            <input type="hidden" name="cx" value="partner-pub-2899450519669111">
+            <input type="hidden" name="cof" value="FORID:11">
+            <input type="hidden" name="ie" value="ISO-8859-1">
+            <input type="text" name="q" id="textobuscar" placeholder="ej. css"><input type="submit" name="sa" value="Buscar" id="botonbuscar">
+          </div>
+        <input name="siteurl" type="hidden" value="www.desarrolloweb.com/"><input name="ref" type="hidden" value=""><input name="ss" type="hidden" value=""></form>
+      </div>
+      <div class="loginbox">
+                <div class="icousuario">
+          <span class="icon-user"></span>
+           <a id="enlacelogin" href="https://desarrolloweb.com/articulos/tablas-fpdf.html#" onclick="$(&#39;.cu250mdWrapper&#39;).slideToggle();return false;">Login</a> | <a href="https://desarrolloweb.com/comunidad/registro/">Registro</a>
+          <div class="cu250mdWrapper" id="2flogin">
+            <div class="cu250md">
+              <div class="accesoUsuarios col_1 mb">Acceso usuarios</div>
+              <div class="errorLoginWrapper">
+                 <div class="errorLogin"></div>
+              </div>
+              <form method="post" action="https://desarrolloweb.com/dologin.php" id="formullogin" onsubmit="return false;">
+                <input type="hidden" value="" name="id_descarga">
+                <input type="hidden" value="/" name="origen">
+                <div class="col_1 mb sufix_1">
+                  <label for="usuario" class="col_2">E-mail:</label>
+                  <input type="text" maxlength="150" size="14" name="usuario" id="usuario" class="col_2">
+                </div>
+                <div class="col_1 mb sufix_1">
+                  <label for="clave" class="col_2">Clave:</label>
+                  <input type="password" maxlength="150" size="14" name="clave" id="clave" class="col_2">
+                </div>
+                <div class="col_1">
+                  <span class="col_2"><label for="guardar_clave" class="nh">Recordar este usuario</label></span>
+                  <input type="checkbox" value="1" name="guardar_clave" id="guardar_clave">
+                </div>
+                <div class="submitButtonWrapper">
+                  <input type="submit" value="Login" id="btnlogin" onclick="doSubmit(this)">
+                </div>
+              </form>
+              <div class="accion">
+                    <img src="./Tablas en FPDF_files/key.png" width="16" height="16" alt=""> <a href="https://desarrolloweb.com/comunidad/recordarclave.php">¿Olvidaste tu clave?</a>
+                    <img src="./Tablas en FPDF_files/user.png" width="16" height="16" alt=""> <a href="https://desarrolloweb.com/comunidad/registro/">Registrarse</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+
+      <div id="accionnavega" class="sprite">Navegación</div>
+      <div class="clearfix"></div>
+    </header>
+    <div id="localizador">
+      <div id="breadcrumbs"><a href="https://desarrolloweb.com/index.php">DesarrolloWeb.com</a> &gt; <a href="https://desarrolloweb.com/manuales/">Manuales</a> &gt;  <a href="https://desarrolloweb.com/manuales/manual-fpdf.html">Crear PDF en PHP con FPDF</a></div>
+      <a id="accnavlocaliza" href="https://desarrolloweb.com/articulos/tablas-fpdf.html#" onclick="return false;" alt="menu responsive"></a>
+      </div>
+    <div id="supercuerpo">
+      <nav>
+        <ul>
+          <li class="navtit"><a href="https://desarrolloweb.com/secciones/">Secciones</a></li>
+          <li><a href="https://desarrolloweb.com/manuales/">Manuales</a></li>
+          <li><a href="https://desarrolloweb.com/programas/">Programas</a></li>
+          <li><a href="https://desarrolloweb.com/faq/">FAQs</a></li>
+          <li><a href="https://desarrolloweb.com/directorio/">Directorio</a></li>
+          <li><a href="https://desarrolloweb.com/videos/">Vídeos</a></li>
+          <li><a href="https://desarrolloweb.com/en-directo/">En directo</a></li>
+        </ul>
+        <ul>
+          <li class="navtit"><a href="https://desarrolloweb.com/monotematicos/">Monotemáticos</a></li>
+          <li><a href="https://desarrolloweb.com/desde0/">Desde 0</a></li>
+          <li><a href="https://desarrolloweb.com/diseno-web/">Diseño web</a></li>
+          <li><a href="https://desarrolloweb.com/html/">HTML</a></li>
+          <li><a href="https://desarrolloweb.com/css/">CSS</a></li>
+          <li><a href="https://desarrolloweb.com/javascript/">Javascript</a></li>
+          <li><a href="https://desarrolloweb.com/asp/">ASP</a></li>
+          <li><a href="https://desarrolloweb.com/php/">PHP</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </nav>
+      <div role="main" id="contenido">
+            <div id="columnaprincipal">
+              <div class="col_1 mt mb">
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- dw_adaptable -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2899450519669111" data-ad-slot="4486354017" data-ad-format="horizontal"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+	<section>
+		<article class="articulo">
+			<h1>Tablas en FPDF</h1>
+
+						<div class="datosDescripcionArticulo col_1 hr">
+				<ul class="inline_list">
+										<li>
+					Por <a rel="author" href="https://desarrolloweb.com/contacta/142.html"><b>Sara Alvarez</b></a><br>					</li>
+															<li>
+					<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Tablas en FPDF_files/follow_button.5b6375bb17bd9edb2f4e7f8f12971999.es.html" style="position: static; visibility: visible; width: 131px; height: 20px;" data-screen-name="Gimawari"></iframe>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</li>
+					<li>				</li></ul>
+			</div>
+			<div class="col_1 fuente8">
+				<ul class="inline_list">
+										<li class="icofecha">
+						<span class="icon-calendar-alt-stroke"></span>
+						29						de
+						julio						de
+						2010					</li>
+										<li class="icocoment">
+												<span class=" icon-comment-stroke"></span>
+						<a href="https://desarrolloweb.com/articulos/tablas-fpdf.html#comentarios">14 Comentarios</a>
+					</li>
+					<li class="icotag">
+						<span class=" icon-tag-fill2"></span> <a href="https://desarrolloweb.com/directorio/programacion/php">PHP</a>					</li>
+				</ul>
+			</div>
+
+			
+
+			<div class="robapaginas" style="margin-top: 7px;">
+			<ins data-revive-zoneid="1" data-revive-id="c610c59b0eae847e29bbfa37ff2d08a3"></ins>
+<script async="" src="https://adserver.desarrolloweb.com.es/delivery/asyncjs.php"></script>			</div>
+
+			<div>
+				<div class="breve_descripcion" style="margin-bottom: 15px;">
+					<b>Vemos cónstruir tablas para nuestros documentos en pdf con FPDF.</b>
+				</div>
+				Siguiendo con nuestro <a href="http://www.desarrolloweb.com/manuales/manual-fpdf.html">manual sobre FPDF</a> vamos a ver como construir una tabla para el documento pdf.
+<p>
+Vamos a ver dos ejemplos de construcción de tablas, uno más sencillo que el otro, pero ambos igual de interesantes.
+</p><p>
+La primera tabla es muy sencillita, tan solo 2 lineas y la cabecera. Para ello vamos a pasarle un array con los nombres de cada celda, y después vamos a ir rellenando las columnas y las filas con la <a href="http://www.desarrolloweb.com/articulos/funciones-fpdf.html">función CELL</a>.
+</p><p>
+La función seria la siguiente:
+</p><p>
+
+<span class="codigo">
+functionTablaBasica($header)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;    //Cabecera<br>
+&nbsp;&nbsp;&nbsp;    foreach($header as $col)<br>
+&nbsp;&nbsp;&nbsp;        $this-&gt;Cell(40,7,$col,1);<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;Ln();<br>
+&nbsp;&nbsp;&nbsp;    <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"hola",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"hola2",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"hola3",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"hola4",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Ln();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"linea ",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"linea 2",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"linea 3",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"linea 4",1);<br>
+&nbsp;&nbsp;&nbsp;}
+</span>
+
+</p><p>
+y la llamada a la función seria la siguiente:
+</p><p>
+
+<span class="codigo">
+//Creación del objeto de la clase heredada<br>
+$pdf=new PDF();<br>
+//Títulos de las columnas<br>
+$header=array('Columna 1','Columna 2','Columna 3','Columna 4');<br>
+$pdf-&gt;AliasNbPages();<br>
+//Primera página<br>
+$pdf-&gt;AddPage();<br>
+$pdf-&gt;SetY(65);<br>
+//$pdf-&gt;AddPage();<br>
+$pdf-&gt;Tabla Basica($header);
+</span>
+
+</p><p>
+El siguiente ejemplo de tabla es algo más complicado ya que le vamos a dar colores a las filas y vamos a quitar los bordes inferiores de cala linea.
+</p><p>
+La función sería la siguiente:
+</p><p>
+
+<span class="codigo">
+function TablaColores($header)<br>
+{<br>
+    //Colores, ancho de línea y fuente en negrita<br>
+    $this-&gt;SetFillColor(255,0,0);<br>
+    $this-&gt;SetTextColor(255);<br>
+    $this-&gt;SetDrawColor(128,0,0);<br>
+    $this-&gt;SetLineWidth(.3);<br>
+    $this-&gt;SetFont('','B');<br>
+    //Cabecera<br>
+   <br>
+    for($i=0;$i&lt;count($header);$i++)<br>
+        $this-&gt;Cell(40,7,$header[$i],1,0,'C',1);<br>
+    $this-&gt;Ln();<br>
+    //Restauración de colores y fuentes<br>
+    $this-&gt;SetFillColor(224,235,255);<br>
+    $this-&gt;SetTextColor(0);<br>
+    $this-&gt;SetFont('');<br>
+    //Datos<br>
+    $fill=false;<br>
+   <br>
+        $this-&gt;Cell(40,6,"hola",'LR',0,'L',$fill);<br>
+        $this-&gt;Cell(40,6,"hola2",'LR',0,'L',$fill);<br>
+        $this-&gt;Cell(40,6,"hola3",'LR',0,'R',$fill);<br>
+        $this-&gt;Cell(40,6,"hola4",'LR',0,'R',$fill);<br>
+        $this-&gt;Ln();<br>
+        $fill=true;<br>
+        $this-&gt;Cell(40,6,"col",'LR',0,'L',$fill);<br>
+        $this-&gt;Cell(40,6,"col2",'LR',0,'L',$fill);<br>
+        $this-&gt;Cell(40,6,"col3",'LR',0,'R',$fill);<br>
+        $this-&gt;Cell(40,6,"col4",'LR',0,'R',$fill);<br>
+        $fill=!$fill;<br>
+        $this-&gt;Ln();<br>
+        $this-&gt;Cell(160,0,'','T');<br>
+}
+</span>
+
+</p><p>
+Todas las funciones que vemos ya están explicadas en otros artículos del <a href="http://www.desarrolloweb.com/manuales/manual-fpdf.html">manual de FPDF</a> por lo que no entraremos en detalles. 
+<br>
+Hemos establecido el color de relleno de las celdas, el color del texto, el grosor de los bordes y el tipo de letra. A continuación hemos creado la primera linea en rojo y la letra en negrita. Después asignamos otros colores para el relleno y la letra y vamos rellenando el resto de filas. Vamos colocando los bordes donde necesitamos y diciendo si la celda va rellena o no de color con la variable $fill.
+<br>
+Al final tenemos que añadir el borde de abajo del todo, para ello utilizamos la linea:
+</p><p>
+
+<span class="codigo">
+$this-&gt;Cell(160,0,'','T');
+</span>
+
+</p><p>
+Que nos dice que la linea tiene que ser 160 de ancho, 0 de alto y mostrando solo el borde superior. 
+</p><p>
+Os pongo el ejemplo completo con las dos tablas:
+</p><p>
+
+<span class="codigo">
+&lt;?<br>
+require('fpdf.php');<br>
+<br>
+class PDF extends FPDF<br>
+{<br>
+//Cabecera de página<br>
+&nbsp;&nbsp;&nbsp;function Header()<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;    //Logo<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;Image("leon.jpg" , 10 ,8, 35 , 38 , "JPG" ,"http://www.mipagina.com");<br>
+&nbsp;&nbsp;&nbsp;    //Arial bold 15<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;SetFont('Arial','B',15);<br>
+&nbsp;&nbsp;&nbsp;    //Movernos a la derecha<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;Cell(80);<br>
+&nbsp;&nbsp;&nbsp;    //Título<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;Cell(60,10,'Titulo del archivo',1,0,'C');<br>
+&nbsp;&nbsp;&nbsp;    //Salto de línea<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;Ln(20);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;//Pie de página<br>
+&nbsp;&nbsp;&nbsp;function Footer()<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;    //Posición: a 1,5 cm del final<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;SetY(-15);<br>
+&nbsp;&nbsp;&nbsp;    //Arial italic 8<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;SetFont('Arial','I',8);<br>
+&nbsp;&nbsp;&nbsp;    //Número de página<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;Cell(0,10,'Page '.$this-&gt;PageNo().'/{nb}',0,0,'C');<br>
+&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;//Tabla simple<br>
+&nbsp;&nbsp;&nbsp;function TablaSimple($header)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;    //Cabecera<br>
+&nbsp;&nbsp;&nbsp;    foreach($header as $col)<br>
+&nbsp;&nbsp;&nbsp;        $this-&gt;Cell(40,7,$col,1);<br>
+&nbsp;&nbsp;&nbsp;    $this-&gt;Ln();<br>
+&nbsp;&nbsp;&nbsp;    <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"hola",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"hola2",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"hola3",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"hola4",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Ln();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"linea ",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"linea 2",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"linea 3",1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,5,"linea 4",1);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;//Tabla coloreada<br>
+function TablaColores($header)<br>
+{<br>
+    //Colores, ancho de línea y fuente en negrita<br>
+    $this-&gt;SetFillColor(255,0,0);<br>
+    $this-&gt;SetTextColor(255);<br>
+    $this-&gt;SetDrawColor(128,0,0);<br>
+    $this-&gt;SetLineWidth(.3);<br>
+    $this-&gt;SetFont('','B');<br>
+    //Cabecera<br>
+   <br>
+    for($i=0;$i&lt;count($header);$i++)<br>
+        $this-&gt;Cell(40,7,$header[$i],1,0,'C',1);<br>
+    $this-&gt;Ln();<br>
+    //Restauración de colores y fuentes<br>
+    $this-&gt;SetFillColor(224,235,255);<br>
+    $this-&gt;SetTextColor(0);<br>
+    $this-&gt;SetFont('');<br>
+    //Datos<br>
+    &nbsp;&nbsp;&nbsp;$fill=false;<br>
+        $this-&gt;Cell(40,6,"hola",'LR',0,'L',$fill);<br>
+        $this-&gt;Cell(40,6,"hola2",'LR',0,'L',$fill);<br>
+        $this-&gt;Cell(40,6,"hola3",'LR',0,'R',$fill);<br>
+        $this-&gt;Cell(40,6,"hola4",'LR',0,'R',$fill);<br>
+        $this-&gt;Ln();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fill=!$fill;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(40,6,"col",'LR',0,'L',$fill);<br>
+        $this-&gt;Cell(40,6,"col2",'LR',0,'L',$fill);<br>
+        $this-&gt;Cell(40,6,"col3",'LR',0,'R',$fill);<br>
+        $this-&gt;Cell(40,6,"col4",'LR',0,'R',$fill);<br>
+        $fill=true;<br>
+    &nbsp;&nbsp;&nbsp;$this-&gt;Ln();<br>
+    &nbsp;&nbsp;&nbsp;$this-&gt;Cell(160,0,'','T');<br>
+}<br>
+<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<br>
+}<br>
+<br>
+$pdf=new PDF();<br>
+//Títulos de las columnas<br>
+$header=array('Columna 1','Columna 2','Columna 3','Columna 4');<br>
+$pdf-&gt;AliasNbPages();<br>
+//Primera página<br>
+$pdf-&gt;AddPage();<br>
+$pdf-&gt;SetY(65);<br>
+//$pdf-&gt;AddPage();<br>
+$pdf-&gt;TablaSimple($header);<br>
+//Segunda página<br>
+$pdf-&gt;AddPage();<br>
+$pdf-&gt;SetY(65);<br>
+$pdf-&gt;TablaColores($header);<br>
+$pdf-&gt;Output();<br>
+?&gt;
+</span>
+
+</p><p>
+Podéis ver el <a href="https://desarrolloweb.com/articulos/ejemplos/fpdf/tablas-fpdf.php" target="_blank">ejemplo funcionando en el siguiente enlace.</a>			</p></div>
+			<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- dw_articulos_inferior -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2899450519669111" data-ad-slot="4207152414" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>						<footer>
+						  	<div class="colaborador">
+					<div class="imagen_autor"><div class="imagen"><img class="auto" src="./Tablas en FPDF_files/1630.jpg" width="120" height="140"></div></div>					<div id="descripcion-autor" class="fr tar">
+						<h2>Autor</h2>
+						<h3>
+							<a href="https://desarrolloweb.com/contacta/142.html">
+								<b>Sara Alvarez</b>
+							</a>
+							<br>
+																					<div class="col_1">
+								<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Tablas en FPDF_files/follow_button.5b6375bb17bd9edb2f4e7f8f12971999.es(1).html" style="position: static; visibility: visible; width: 131px; height: 20px;" data-screen-name="Gimawari"></iframe>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							</div>
+													</h3>
+						<div class="col_1"></div>
+						<div class="col_1">Equipo DesarrolloWeb.com</div>
+					</div>
+				</div>
+								<div class="colaborador">
+									</div>
+				<div class="fr">
+					<a href="https://desarrolloweb.com/articulos/tablas-fpdf.html#" class="button" onclick="scroll($(&#39;body&#39;),&#39;.articulo h1&#39;);return false;">Subir <span class="icon-arrow-up"></span></a>
+				</div>
+
+
+
+
+
+
+
+															<div class="col_1">
+					<h2 class="cabeceraAzul"><b>Manual</b></h2><ul><li><a href="https://desarrolloweb.com/manuales/manual-fpdf.html">Crear PDF en PHP con FPDF</a></li></ul>				</div>
+				<div class="col_1 mt">
+					<div class="fl"><a href="https://desarrolloweb.com/articulos/insertar-archivo-txt-fpdf.html" class="button">
+	<span class="icon-arrow-left2"></span> Insertar archivos de texto con  FPDF</a></div><div class="fr"><a href="https://desarrolloweb.com/articulos/columnas-fpdf.html" class="button">Columnas en FPDF <span class="icon-arrow-right2"></span></a></div>				</div>
+
+
+				<div class="col_1">
+					<a name="compartir"></a>
+					<h2 class="cabeceraAzul"><b>Compartir</b></h2>
+										<div class="col_1 mt">
+
+	<script type="text/javascript" src="./Tablas en FPDF_files/plusone.js.descarga" gapi_processed="true">
+	  {lang: 'es'}
+	</script>
+
+	
+	<div class="col_1">
+		<ul class="col_1 inline_list redes_sociales">
+			<li>
+				<script src="./Tablas en FPDF_files/in.js.descarga" type="text/javascript">
+					lang: es_ES
+				</script>
+				<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1494919012460_1-container" class="IN-top IN-empty"><span id="li_ui_li_gen_1494919012460_1" class="IN-top"><span id="li_ui_li_gen_1494919012460_1-inner" class="IN-top"><span id="li_ui_li_gen_1494919012460_1-content" class="IN-top">0</span></span></span></span></span><br><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1494919012388_0"><a id="li_ui_li_gen_1494919012388_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1494919012388_0-logo">in</span><span id="li_ui_li_gen_1494919012388_0-title"><span id="li_ui_li_gen_1494919012388_0-mark"></span><span id="li_ui_li_gen_1494919012388_0-title-text">Compartir</span></span></a></span></span></span><script type="IN/Share+init" data-counter="top"></script>
+			</li>
+			<li>
+				<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" tabindex="0" vspace="0" width="100%" id="I0_1494919010646" name="I0_1494919010646" src="./Tablas en FPDF_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+			</li>
+			<li>
+				<script src="./Tablas en FPDF_files/widgets.js.descarga" type="text/javascript"></script>
+				<div>
+			    <iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./Tablas en FPDF_files/tweet_button.5b6375bb17bd9edb2f4e7f8f12971999.en.html" style="position: static; visibility: visible; width: 60px; height: 20px;" data-url="http://www.desarrolloweb.com/articulos/tablas-fpdf.html"></iframe>
+				</div>
+			</li>
+			<li>
+				<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Tablas en FPDF_files/JtmcTFxyLye.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f315db139b3f04" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" src="./Tablas en FPDF_files/ping.html" style="display: none;"></iframe></div></div></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=459742597430134";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				<div class="fb-like fb_iframe_widget" data-href="http://www.desarrolloweb.com/articulos/tablas-fpdf.html" data-width="150" data-layout="box_count" data-action="recommend" data-show-faces="false" data-send="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=recommend&amp;app_id=459742597430134&amp;container_width=103&amp;href=http%3A%2F%2Fwww.desarrolloweb.com%2Farticulos%2Ftablas-fpdf.html&amp;layout=box_count&amp;locale=es_LA&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=150"><span style="vertical-align: bottom; width: 95px; height: 40px;"><iframe name="f273d2deb455ccc" width="150px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Tablas en FPDF_files/like.html" style="border: none; visibility: visible; width: 95px; height: 40px;" class=""></iframe></span></div>
+			</li>
+		</ul>
+		<div class="col_1">
+					</div>
+	</div>
+
+</div> <!-- col_1 -->				</div>
+
+
+				<div id="comentarios-articulos">
+					<div class="col_1 mt">
+	<h2 class="cabeceraAzul">
+		<a name="comentarios"></a><b>Comentarios</b>
+	</h2>
+
+	<div>
+				<div class="accion">
+			<div class="accion icocoment">
+						</div>
+			<div class="accion addcommentsico">
+				<span class="icon-chat"></span>
+				<a href="https://desarrolloweb.com/comentarios/anadir.php?articulo=3865">Enviar un comentario al artículo</a>
+			</div>
+					</div>
+	</div>
+				<div>
+				<div class="nombre_coment">
+					<h2>Alfonso</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					31/8/2011				</div>
+								<b>Arreglo de celdas</b>
+				<br>
+								<div>
+					Hola que tal...<br>
+<br>
+Me gustaria saber como se podria hacer un arreglo o sea quiero hacer algo parecido a esto:<br>
+____________________________________________________________________<br>
+|_____________ANEXO____________|______________DESCRIPCION_________| |                                                      |                                                             | |              IMAGEN 1                         |                        DESCRIPCION 1              | |_______________________________|___________________________________||                                                      |                                                             | |              IMAGEN 2                         |                        DESCRIPCION 2              | |_______________________________|___________________________________||                                                      |                                                             | |              IMAGEN 3                         |                        DESCRIPCION 3              | |_______________________________|___________________________________|<br>
+ <br>
+Y ya cuando sean por ejemplo 4 imagenes, cuando llegue a esta 3er imagen de un salto de pagina y se imprima en el pdf en una nueva hoja la imagen 4 y la descripcion 4 y que ya no cree mas celdas porque ya no se requieren<br>
+<br>
+Si me pueden ayudar se los agradeceria mucho				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario51851"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(51851, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>gustavo</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					22/5/2012				</div>
+								<b>codigo</b>
+				<br>
+								<div>
+					muy buena ayuda				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario55100"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(55100, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>eduardo</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					27/5/2012				</div>
+								<b>ayuda</b>
+				<br>
+								<div>
+					me sirvio de mucho los ejemplos<br>
+<br>
+pero tengo uan duda... como podria reemplazar el "hola o hola2" con informacion extraida del mysql?<br>
+<br>
+seria genial si respondieran ya que e buscado y no logro dar con la respuesta				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario55195"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(55195, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2><span style="line-height: 55px; height: 55px;">php_gerza</span><div align="center" class="fuente8" style="float: left; margin: 0px 10px 0px 0px;"><img class="cargatipusuario" id="tipusuario5292" border="0" src="./Tablas en FPDF_files/foto_defecto.gif" width="70" height="55" vspace="2">	</div></h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					29/1/2013				</div>
+								<b>Se me perdio un registro...</b>
+				<br>
+								<div>
+					Tengo un par de tablas como esta:<br>
+   $pdf-&gt;Cell(41,5,"FECHA",1,0);<br>
+      $pdf-&gt;Cell(41,5,"HORAS",1,1);<br>
+       $cons = "SELECT * FROM horas_extras WHERE RFC='$RFC' order by fecha desc";<br>
+       $res = mysql_query($cons,$Cxn) or die (mysql_error());<br>
+       $fil =mysql_fetch_array($res);<br>
+         while ($fil = mysql_fetch_array ($res))<br>
+         {<br>
+<br>
+<br>
+<br>
+      $pdf-&gt;Cell(41,5,$fil['fecha'],1,0);<br>
+      $pdf-&gt;Cell(41,5,$fil['horas'],1,1);<br>
+<br>
+<br>
+   }          mysql_free_result($res);<br>
+<br>
+<br>
+<br>
+y al parecer funciona pero siempre que hago una consulta me falta un registro.... si existen 5 resultados solo me muestra 4.... si existen 11 solo me muestra 10 y así consecutivamente.... alguien me podrá dar un tip??? no encuentro mi error...				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario57530"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(57530, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Jesus</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					10/2/2013				</div>
+								<b>re Falta una fila</b>
+				<br>
+								<div>
+					El problema radica en &lt;br /&gt;<br>
+$fil=mysql_fetch_array($result);&lt;br /&gt;<br>
+while($fil=mysql_fetch_array($result){&lt;br /&gt;<br>
+&lt;br /&gt;<br>
+}&lt;br /&gt;<br>
+al hacer el primer mysql_fetch_array coges la primera línea&lt;br /&gt;<br>
+&lt;br /&gt;<br>
+al hacer el while ya tenías la primera línea y por tanto empieza el while en la segunda. Siempre se te saltará la primera línea de tu consulta.&lt;br /&gt;<br>
+Soluc¡on: deja sólo el while				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario57606"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(57606, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Marcos</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					21/2/2013				</div>
+								<b>respuesta</b>
+				<br>
+								<div>
+					es porque estas contando mal la cadena... si son 4 y te muestra tres es porque comienzas desde el 1&lt;br /&gt;<br>
+&lt;br /&gt;<br>
+4 = 0, 1, 2, 3&lt;br /&gt;<br>
+&lt;br /&gt;<br>
+no asi ... 4 = 1, 2, 3 , 4				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario57696"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(57696, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>diefo</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					15/7/2014				</div>
+								<b>consulta</b>
+				<br>
+								<div>
+					Call to undefined method FPDF::TablaBasica() in /var/www/Vipel/generarpdf.php on line 69<br>
+<br>
+A que se debe ese error, tengo bien declarada la funcion, y nose a que otra cosa puede hacer referencia				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario61098"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(61098, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Ángel González</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					18/11/2014				</div>
+								<b>Saludos, muy buena la informacion.</b>
+				<br>
+								<div>
+					Solo quería saber si es posible hacer tablas mas avanzadas tipo Excel, es que he estado varios días intentando y de verdad no he podido lograrlo. Si tienes algún ejemplo o alguien lo tiene y pueda publicarlo se lo agradecería. Muchas gracias.				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario62020"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(62020, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Pablo Baez</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					03/12/2014				</div>
+								<b>tabla</b>
+				<br>
+								<div>
+					hola muy bueno el articulo como puedo hacer tablas una al lado de la otra				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario62129"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(62129, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>ELIAS ALMAZAN BEATRIZ</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					04/4/2015				</div>
+								<b>EXCELENTE</b>
+				<br>
+								<div>
+					Honor a quien honor merece, excelente apunte, esta super, FUNCIONA AL 100%				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario62897"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(62897, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Reinaldo</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					16/10/2015				</div>
+								<b>llamar varialbles</b>
+				<br>
+								<div>
+					hoa muy buena informacion. s<br>
+olo quiero saber como hacer el llamado de los datos de mysql y que aparescan en una celda de una tabla, es dicri llamar los datos de bd y que cada dato que lleme me aparezca en una celda de una tabla... aun asi gracias por el aporte a mi proyecto.. muchos saludos				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario64230"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(64230, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Uriel Manuel</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					28/10/2015				</div>
+								<b>Pregunta</b>
+				<br>
+								<div>
+					Hola quisiera sabes si se puede posicionar una tabla de manera automática, ya que cuando mi contenido es corto la tabla se queda en la misma poción y quisiera que también se desplace dependiendo el contenido superior el cual son multicell				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario64321"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(64321, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>guarramon</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					26/2/2016				</div>
+								<b>¡Qué chulo!</b>
+				<br>
+								<div>
+					Me encanta				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario65165"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(65165, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Pablo</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					19/4/2016				</div>
+								<b>rowspan y colspan</b>
+				<br>
+								<div>
+					Buenos dias, buenisimo el tutorial de insertar tablas. Ahora una consulta, como hago para insertar rowspan o colspan.<br>
+Muchas gracias.-				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario65570"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(65570, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+		
+		<div class="accion">
+			<div class="accion icocoment">
+						</div>
+			<div class="accion addcommentsico">
+				<span class="icon-chat"></span>
+				<a href="https://desarrolloweb.com/comentarios/anadir.php?articulo=3865">Enviar un comentario al artículo</a>
+			</div>
+					</div>
+	</div>				</div>
+							</footer>
+		</article>
+	</section>
+	
+		</div>
+      <!-- fin columna principal -->
+
+      <!-- Barra lateral -->
+      <aside>
+
+                <div id="usuarios">
+          <div class="icousuario">
+            <span class="icon-user"></span>
+            <span>Usuarios:</span> <a id="enlacelogin" href="https://desarrolloweb.com/articulos/tablas-fpdf.html#" onclick="$(&#39;.cu250mdWrapper&#39;).slideToggle();return false;">Login</a> | <a href="https://desarrolloweb.com/comunidad/registro/">Registro</a>
+            <div class="cu250mdWrapper" id="flogin">
+              <div class="cu250md">
+                <div class="accesoUsuarios">Acceso usuarios</div>
+                <div class="errorLoginWrapper">
+                   <div class="errorLogin"></div>
+                </div>
+                <form method="post" action="https://desarrolloweb.com/dologin.php" id="formullogin" onsubmit="return false;">
+                  <input type="hidden" value="" name="id_descarga">
+                  <input type="hidden" value="/" name="origen">
+                  <div>
+                    <label class="fuente8" for="usuario2">E-mail:</label>
+                    <input type="text" maxlength="150" size="14" name="usuario" id="usuario2">
+                  </div>
+                  <div>
+                    <label class="fuente8" for="clave2">Clave:</label>
+                    <input type="password" maxlength="150" size="14" name="clave" id="clave2">
+                  </div>
+                  <div>
+                    <label class="fuente8" for="guardar_clave2">Recordar este usuario</label>
+                    <input type="checkbox" value="1" name="guardar_clave" id="guardar_clave2">
+                  </div>
+
+                  <div class="submitButtonWrapper">
+                    <input type="submit" value="Login" id="btnlogin" onclick="doSubmit(this)">
+                  </div>
+                </form>
+                <div class="accion">
+                  <div class="clearfix">
+                    <a href="https://desarrolloweb.com/comunidad/recordarclave.php"><img src="./Tablas en FPDF_files/key.png" width="16" height="16" alt=""> ¿Olvidaste tu clave?</a>
+                  </div>
+                  <div class="clearfix">
+                    <a href="https://desarrolloweb.com/comunidad/registro/"><img src="./Tablas en FPDF_files/user.png" width="16" height="16" alt=""> Registrarse</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="bannerslat">		<ul>
+		<li><a href="http://www.desarrolloweb.com/js-practico-ya.html"><img src="./Tablas en FPDF_files/4206.jpg"></a></li>
+		<li><a href="https://escuela.it/cursos/arquitectura-profesional-css-con-itcss"><img src="./Tablas en FPDF_files/4216.jpg"></a></li>
+	</ul>
+</div>
+        <div class="col_1 tac">
+          
+        </div>
+      </aside>
+      <!-- Fin de Barra lateral -->
+      <div class="clearfix"></div>
+    </div>
+    <!-- fin div role main -->
+  </div>
+    <!-- fin div supercuerpo -->
+
+
+    <!-- PIE DE P?GINA -->
+    <footer id="pieprincipal">
+      <div id="todopie">
+        <div class="seccionpie">
+          <h1>Principales</h1>
+          <ul>
+            <li><a href="https://desarrolloweb.com/manuales/">Manuales</a></li>
+            <li><a href="https://desarrolloweb.com/faq/">FAQs</a></li>
+            <li><a href="https://desarrolloweb.com/en-directo/">En directo</a></li>
+            <li><a href="https://desarrolloweb.com/videos/">Vídeos</a></li>
+          </ul>
+        </div>
+        <div class="seccionpie">
+          <h1>Monotemáticos</h1>
+          <ul>
+            <li><a href="https://desarrolloweb.com/desde0/">Desde cero</a></li>
+            <li><a href="https://desarrolloweb.com/html/">HTML</a>, <a href="https://desarrolloweb.com/css/">CSS</a></li>
+            <li><a href="https://desarrolloweb.com/javascript/">Javascript</a>, <a href="https://desarrolloweb.com/ajax/">Ajax</a></li>
+            <li><a href="https://desarrolloweb.com/diseno-web/">Diseño</a>, <a href="https://desarrolloweb.com/asp/">ASP</a></li>
+          </ul>
+        </div>
+        <div class="seccionpie">
+          <h1>Blogging</h1>
+          <ul>
+            <li><a href="https://desarrolloweb.com/actualidad/">Actualidad</a></li>
+            <li><a href="https://desarrolloweb.com/de_interes/">De interés</a></li>
+            <li><a href="https://desarrolloweb.com/agenda/">Agenda</a></li>
+          </ul>
+        </div>
+        <div class="seccionpie" id="encuentranos">
+          <div class="fb">
+            <a href="https://www.facebook.com/desarrollowebcom" class="enrs" target="_blank">
+              <span class="icon-facebook2"></span>
+            </a>
+          </div>
+          <div class="twitter"><a href="http://twitter.com/deswebcom" class="enrs" target="_blank"><span class="icon-twitter2"></span></a></div>
+          <div class="youtube">
+            <a href="http://www.youtube.com/user/desarrollowebcom" class="enrs" target="_blank">
+              <span class="icon-youtube2"></span>
+            </a>
+          </div>
+          <div class="googleplus">
+            <a href="https://plus.google.com/+desarrolloweb" class="enrs" target="_blank"><span class="icon-google-plus2"></span></a>
+          </div>
+
+        </div>
+        <div class="seccionpie" id="powered">
+          <h1>Powered by:</h1>
+          <ul>
+            <li><a href="http://www.apachectl.com/" target="_blank"><img src="./Tablas en FPDF_files/apachectl.gif"></a></li>
+          </ul>
+        </div>
+      </div> <!-- todo pie -->
+      <div class="clearfix"></div>
+      <div id="piefin">
+        <ul>
+          <li><a href="https://desarrolloweb.com/">Desarrolloweb.com</a></li>
+          <li><a href="https://desarrolloweb.com/copyright/">Copyright</a></li>
+          <li><a href="https://desarrolloweb.com/anunciese/">Publicidad</a></li>
+          <li><a href="https://desarrolloweb.com/acercade/">Acerca de</a></li>
+          <li><a href="https://desarrolloweb.com/datos-legales/">Datos legales</a></li>
+          <li><a href="https://desarrolloweb.com/datos-legales/cookies.php">P. de cookies</a></li>
+          <li><a href="https://desarrolloweb.com/contacta/">Contacta</a></li>
+        </ul>
+      </div>
+
+    </footer>
+    <!-- FIN PIE DE PAGINA -->
+  </div>
+  <!-- fin container -->
+
+
+  <script src="./Tablas en FPDF_files/script-min.js.descarga"></script>
+
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-365134-1', 'desarrolloweb.com');
+  ga('send', 'pageview');
+
+  </script>
+
+<div class="contcookies" style="display: none;">Como la mayoría, usamos cookies para personalizar la navegación. Nuestros partner de redes sociales analítica y anuncios también pueden instalar cookies en tu navegador. Si sigues navegando entendemos que aceptas la colecta de datos y que se compartan datos con terceros. Existe una <a href="https://desarrolloweb.com/datos-legales/cookies.php">política de cookies</a> para más información. <a href="https://desarrolloweb.com/articulos/tablas-fpdf.html#" class="cookiesaceptar">Aceptar</a></div><iframe name="oauth2relay355311625" id="oauth2relay355311625" src="./Tablas en FPDF_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Tablas en FPDF_files/saved_resource.html"></iframe></body></html>

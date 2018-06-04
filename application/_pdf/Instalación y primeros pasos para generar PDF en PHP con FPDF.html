@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://desarrolloweb.com/articulos/introduccion-fpdf.html -->
+<html class="no-js" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <title>Instalación y primeros pasos para generar PDF en PHP con FPDF</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="apple-touch-fullscreen" content="no">
+
+<link rel="shortcut icon" href="https://desarrolloweb.com/img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://desarrolloweb.com/images/icono_DW.png">
+
+<link href="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/css" rel="stylesheet" type="text/css">
+<meta name="author" content="DesarrolloWeb.com">
+<meta name="owner" content="Guiarte Multimedia S.L.">
+<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/estilo2015.css">
+
+
+<script src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/cb=gapi.loaded_1" async=""></script><script async="" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/analytics.js.descarga"></script><script id="facebook-jssdk" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/all.js.descarga"></script><script id="twitter-wjs" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/widgets.js.descarga"></script><script src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/plusone.js.descarga" gapi_processed="true">
+  {lang: 'es'}
+</script><meta property="og:title" content="Instalación y primeros pasos para generar PDF en PHP con FPDF">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.desarrolloweb.com/articulos/introduccion-fpdf.html">
+<meta property="og:image" content="http://www.desarrolloweb.com/images/logo-desarrolloweb100x60.gif"><meta property="og:site_name" content="DesarrolloWeb.com">
+<meta property="fb:admins" content="100001063850916">
+<script>
+var base_dir = "https://desarrolloweb.com";
+</script>
+
+<script src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/secureAnonymousFramework"></script><script type="text/javascript" charset="utf-8" async="" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/button.90facfc7dd48c9c8c4f1fc94e137b515.js.descarga"></script><style type="text/css">* html #li_ui_li_gen_1494918996961_0 a#li_ui_li_gen_1494918996961_0-link{height:1% !important;}#li_ui_li_gen_1494918996961_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1494918996961_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1494918996961_0 a#li_ui_li_gen_1494918996961_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1494918996961_0 a#li_ui_li_gen_1494918996961_0-link:link, #li_ui_li_gen_1494918996961_0 a#li_ui_li_gen_1494918996961_0-link:visited, #li_ui_li_gen_1494918996961_0 a#li_ui_li_gen_1494918996961_0-link:hover, #li_ui_li_gen_1494918996961_0 a#li_ui_li_gen_1494918996961_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1494918996961_0 a#li_ui_li_gen_1494918996961_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-webkit-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-webkit-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#0077b5 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important; background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1494918996961_0.hovered #li_ui_li_gen_1494918996961_0-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0369a0), color-stop(100%,#0369a0)) !important; background-image: -webkit-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1494918996961_0.clicked #li_ui_li_gen_1494918996961_0-title, #li_ui_li_gen_1494918996961_0.down #li_ui_li_gen_1494918996961_0-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#066094), color-stop(100%,#066094)) !important; background-image: -webkit-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title{}.IN-shadowed #li_ui_li_gen_1494918996961_0.hovered #li_ui_li_gen_1494918996961_0-title{}.IN-shadowed #li_ui_li_gen_1494918996961_0.clicked #li_ui_li_gen_1494918996961_0-title, .IN-shadowed #li_ui_li_gen_1494918996961_0.down #li_ui_li_gen_1494918996961_0-title{}#li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title-text, #li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1494918996961_0.hovered #li_ui_li_gen_1494918996961_0-title-text, #li_ui_li_gen_1494918996961_0.hovered #li_ui_li_gen_1494918996961_0-title-text *{color:#fff !important;}#li_ui_li_gen_1494918996961_0.clicked #li_ui_li_gen_1494918996961_0-title-text, #li_ui_li_gen_1494918996961_0.down #li_ui_li_gen_1494918996961_0-title-text, #li_ui_li_gen_1494918996961_0.clicked #li_ui_li_gen_1494918996961_0-title-text *, #li_ui_li_gen_1494918996961_0.down #li_ui_li_gen_1494918996961_0-title-text *{color:#fff !important;}#li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title #li_ui_li_gen_1494918996961_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important; background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title-text, .success #li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1494918996961_0 #li_ui_li_gen_1494918996961_0-title{}.success #li_ui_li_gen_1494918996961_0.hovered #li_ui_li_gen_1494918996961_0-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0369a0), color-stop(100%,#0369a0)) !important; background-image: -webkit-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1494918996961_0.hovered #li_ui_li_gen_1494918996961_0-title-text, .success #li_ui_li_gen_1494918996961_0.hovered #li_ui_li_gen_1494918996961_0-title-text *{color:#fff !important;}.success #li_ui_li_gen_1494918996961_0.clicked #li_ui_li_gen_1494918996961_0-title, .success #li_ui_li_gen_1494918996961_0.down #li_ui_li_gen_1494918996961_0-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#066094), color-stop(100%,#066094)) !important; background-image: -webkit-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1494918996961_0.clicked #li_ui_li_gen_1494918996961_0-title-text, .success #li_ui_li_gen_1494918996961_0.down #li_ui_li_gen_1494918996961_0-title-text, .success #li_ui_li_gen_1494918996961_0.clicked #li_ui_li_gen_1494918996961_0-title-text *, .success #li_ui_li_gen_1494918996961_0.down #li_ui_li_gen_1494918996961_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1494918996961_0.clicked #li_ui_li_gen_1494918996961_0-title, .IN-shadowed .success #li_ui_li_gen_1494918996961_0.down #li_ui_li_gen_1494918996961_0-title{}#li_ui_li_gen_1494918997032_1-container.IN-top {display:inline-block !important;overflow:visible !important;position:relative !important;height:42px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1494918997032_1.IN-top {display:inline-block !important;height:42px !important;width:60px !important;text-align:center !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:-207px -470px !important;}#li_ui_li_gen_1494918997032_1-content.IN-top {display:inline !important;font-size:16px !important;color:#4e4e4e !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:38px !important;}#li_ui_li_gen_1494918997032_1-container.IN-empty #li_ui_li_gen_1494918997032_1-inner.IN-top {background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -560px !important;background-size:initial !important;overflow:hidden !important;margin:4px auto 0 auto !important;width:28px !important;height:28px !important;display:block !important;}#li_ui_li_gen_1494918997032_1-container.IN-empty #li_ui_li_gen_1494918997032_1-content.IN-top {text-indent:-999px !important;display:inline-block !important;}#li_ui_li_gen_1494918997032_1-container.IN-hidden #li_ui_li_gen_1494918997032_1 {display:none !important;}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body>
+	<div id="container">
+   	<header>
+      <div id="logo">
+                <a href="http://desarrolloweb.com/">
+          <img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/logo.png" alt="Logo de DesarrolloWeb.com">
+        </a>
+      </div>
+      <div id="iconosredes20">
+        <a href="http://www.facebook.com/desarrollowebcom/"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/1x1.png" class="sprite" alt="facebook" id="fb20"></a>
+        <a href="http://www.twitter.com/deswebcom/"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/1x1.png" class="sprite" alt="twitter" id="tw20"></a>
+        <a href="https://plus.google.com/111428356405969326386/posts"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/1x1.png" class="sprite" alt="google plus" id="gp20"></a>
+        <a href="http://www.youtube.com/desarrollowebcom"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/1x1.png" class="sprite" alt="youtube" id="yt20"></a>
+        <a href="http://www.desarrolloweb.com/rss/general_rss.php"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/1x1.png" class="sprite" alt="rss" id="rss20"></a>
+      </div>
+
+      <div id="buscador">
+        <form action="https://desarrolloweb.com/buscar.php" id="cse-search-box">
+          <div>
+            <input type="hidden" name="cx" value="partner-pub-2899450519669111">
+            <input type="hidden" name="cof" value="FORID:11">
+            <input type="hidden" name="ie" value="ISO-8859-1">
+            <input type="text" name="q" id="textobuscar" placeholder="ej. css"><input type="submit" name="sa" value="Buscar" id="botonbuscar">
+          </div>
+        <input name="siteurl" type="hidden" value="www.desarrolloweb.com/"><input name="ref" type="hidden" value=""><input name="ss" type="hidden" value=""></form>
+      </div>
+      <div class="loginbox">
+                <div class="icousuario">
+          <span class="icon-user"></span>
+           <a id="enlacelogin" href="https://desarrolloweb.com/articulos/introduccion-fpdf.html#" onclick="$(&#39;.cu250mdWrapper&#39;).slideToggle();return false;">Login</a> | <a href="https://desarrolloweb.com/comunidad/registro/">Registro</a>
+          <div class="cu250mdWrapper" id="2flogin">
+            <div class="cu250md">
+              <div class="accesoUsuarios col_1 mb">Acceso usuarios</div>
+              <div class="errorLoginWrapper">
+                 <div class="errorLogin"></div>
+              </div>
+              <form method="post" action="https://desarrolloweb.com/dologin.php" id="formullogin" onsubmit="return false;">
+                <input type="hidden" value="" name="id_descarga">
+                <input type="hidden" value="/" name="origen">
+                <div class="col_1 mb sufix_1">
+                  <label for="usuario" class="col_2">E-mail:</label>
+                  <input type="text" maxlength="150" size="14" name="usuario" id="usuario" class="col_2">
+                </div>
+                <div class="col_1 mb sufix_1">
+                  <label for="clave" class="col_2">Clave:</label>
+                  <input type="password" maxlength="150" size="14" name="clave" id="clave" class="col_2">
+                </div>
+                <div class="col_1">
+                  <span class="col_2"><label for="guardar_clave" class="nh">Recordar este usuario</label></span>
+                  <input type="checkbox" value="1" name="guardar_clave" id="guardar_clave">
+                </div>
+                <div class="submitButtonWrapper">
+                  <input type="submit" value="Login" id="btnlogin" onclick="doSubmit(this)">
+                </div>
+              </form>
+              <div class="accion">
+                    <img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/key.png" width="16" height="16" alt=""> <a href="https://desarrolloweb.com/comunidad/recordarclave.php">¿Olvidaste tu clave?</a>
+                    <img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/user.png" width="16" height="16" alt=""> <a href="https://desarrolloweb.com/comunidad/registro/">Registrarse</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+
+      <div id="accionnavega" class="sprite">Navegación</div>
+      <div class="clearfix"></div>
+    </header>
+    <div id="localizador">
+      <div id="breadcrumbs"><a href="https://desarrolloweb.com/index.php">DesarrolloWeb.com</a> &gt; <a href="https://desarrolloweb.com/manuales/">Manuales</a> &gt;  <a href="https://desarrolloweb.com/manuales/manual-fpdf.html">Crear PDF en PHP con FPDF</a></div>
+      <a id="accnavlocaliza" href="https://desarrolloweb.com/articulos/introduccion-fpdf.html#" onclick="return false;" alt="menu responsive"></a>
+      </div>
+    <div id="supercuerpo">
+      <nav>
+        <ul>
+          <li class="navtit"><a href="https://desarrolloweb.com/secciones/">Secciones</a></li>
+          <li><a href="https://desarrolloweb.com/manuales/">Manuales</a></li>
+          <li><a href="https://desarrolloweb.com/programas/">Programas</a></li>
+          <li><a href="https://desarrolloweb.com/faq/">FAQs</a></li>
+          <li><a href="https://desarrolloweb.com/directorio/">Directorio</a></li>
+          <li><a href="https://desarrolloweb.com/videos/">Vídeos</a></li>
+          <li><a href="https://desarrolloweb.com/en-directo/">En directo</a></li>
+        </ul>
+        <ul>
+          <li class="navtit"><a href="https://desarrolloweb.com/monotematicos/">Monotemáticos</a></li>
+          <li><a href="https://desarrolloweb.com/desde0/">Desde 0</a></li>
+          <li><a href="https://desarrolloweb.com/diseno-web/">Diseño web</a></li>
+          <li><a href="https://desarrolloweb.com/html/">HTML</a></li>
+          <li><a href="https://desarrolloweb.com/css/">CSS</a></li>
+          <li><a href="https://desarrolloweb.com/javascript/">Javascript</a></li>
+          <li><a href="https://desarrolloweb.com/asp/">ASP</a></li>
+          <li><a href="https://desarrolloweb.com/php/">PHP</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </nav>
+      <div role="main" id="contenido">
+            <div id="columnaprincipal">
+              <div class="col_1 mt mb">
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- dw_adaptable -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2899450519669111" data-ad-slot="4486354017" data-ad-format="horizontal"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+	<section>
+		<article class="articulo">
+			<h1>Instalación y primeros pasos para generar PDF en PHP con FPDF</h1>
+
+						<div class="datosDescripcionArticulo col_1 hr">
+				<ul class="inline_list">
+										<li>
+					Por <a rel="author" href="https://desarrolloweb.com/contacta/142.html"><b>Sara Alvarez</b></a><br>					</li>
+															<li>
+					<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/follow_button.5b6375bb17bd9edb2f4e7f8f12971999.es.html" style="position: static; visibility: visible; width: 131px; height: 20px;" data-screen-name="Gimawari"></iframe>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</li>
+					<li>				</li></ul>
+			</div>
+			<div class="col_1 fuente8">
+				<ul class="inline_list">
+										<li class="icofecha">
+						<span class="icon-calendar-alt-stroke"></span>
+						19						de
+						enero						de
+						2010					</li>
+										<li class="icocoment">
+												<span class=" icon-comment-stroke"></span>
+						<a href="https://desarrolloweb.com/articulos/introduccion-fpdf.html#comentarios">19 Comentarios</a>
+					</li>
+					<li class="icotag">
+						<span class=" icon-tag-fill2"></span> <a href="https://desarrolloweb.com/directorio/programacion/php">PHP</a>					</li>
+				</ul>
+			</div>
+
+			
+
+			<div class="robapaginas" style="margin-top: 7px;">
+			<ins data-revive-zoneid="1" data-revive-id="c610c59b0eae847e29bbfa37ff2d08a3"></ins>
+<script async="" src="https://adserver.desarrolloweb.com.es/delivery/asyncjs.php"></script>			</div>
+
+			<div>
+				<div class="breve_descripcion" style="margin-bottom: 15px;">
+					<b>FPDF  es una clase para la generación dinámica de documentos PDF en PHP. Vamos a instalar y crear un primer ejemplo de uso de las librerías FPDF.</b>
+				</div>
+				FPDF es una clase desarrollada en PHP para poder realizar documentos en PDF, dinámicamente a partir de nuestros scripts PHP. Esta clase trabaja de manera totalmente autónoma, por lo que no requiere utilizar la librería PDFlib ni cualquier otro producto similar. 
+<p>
+Se trata de una clase que da bastante juego, ya que podemos modificar la unidad de medida, el formato de la página, los margenes, las cabeceras y los pies de página, los saltos de linea, las imágenes, colores, enlaces, etc.
+</p><p>
+Un detalle importante es que FPDF es una librería gratuita para cualquier uso, tanto comercial como personal (Su primera "F" inicial significa justamente "Free", osea, libre y gratis), por lo que resultará muy interesante para cualquier uso. En este artículo de DesarrolloWeb.com vamos a centrarnos en una explicación sobre su instalación y luego pasaremos a ver un primer ejemplo de uso.
+
+</p><h2>Instalación de FPDF</h2>
+
+Esta clase requiere al menos PHP 4 o superior. Además tiene algunas extensiones que nos pueden resultar útiles.
+<p>
+Después de esta pequeña introducción vamos a pasar a descargar e instalar las librerías necesarias para su utilización. Para ello nos descargamos la última versión de FPDF en el siguiente <a href="http://www.fpdf.org/" target="_blank">enlace</a>, en la sección de descargas.
+</p><p>
+Una vez descargado lo subimos a nuestro servidor y lo colocamos en una carpeta llamada fpdf en la raíz del dominio, o cualquier otro directorio que deseemos, con tal que nos acordemos dónde la hemos puesto y la incluyamos correctamente en los scripts donde pensemos utilizarla.
+</p><p>
+La instalación no requiere ningún otro requisito, por lo que comprobaremos que resulta bastante sencilla.
+
+</p><h2>Trabajando con FPDF para generar un PDF desde PHP</h2>
+
+A partir de aquí ya podemos empezar a ver como se programa con FPDF. Realmente se utiliza como cualquier clase de programación orientada a objetos con PHP, por lo que lo más importante será conocer y dominar sus diferentes métodos y propiedades. Vamos a empezar por un ejemplo muy sencillo que no requiere mucha programación PHP.
+<p>
+El formato general para escribir una pagina en PDF sería el siguiente:
+</p><p>
+
+<span class="codigo">
+&lt;?php<br>
+require('/fpdf/fpdf.php');<br>
+<br>
+$pdf=new FPDF();<br>
+$pdf-&gt;AddPage();<br>
+$pdf-&gt;SetFont('Arial','B',16);<br>
+$pdf-&gt;Cell(40,10,'¡Mi primera página pdf con FPDF!');<br>
+$pdf-&gt;Output();<br>
+?&gt;
+</span>
+
+</p><p>
+Si ejecutamos esto directamente nos aparecerá un archivo PDF con el titulo que hemos puesto.
+</p><p>
+Analicemos todas las lineas escritas:
+</p><p>
+</p><ul>
+<li>Lo primero que hacemos es incluir la librería fpdf.php
+</li><li>En la linea $pdf=new FPDF(); lo que estamos haciendo es crear el objeto FPDF. Si no ponemos nada entre los paréntesis, el objeto se creará con los valores por defecto, en este caso serian los siguientes: el tamaño de pagina es A4, el formato alargado y la unidad de medida el milímetro. Si queremos modificar estos parámetros seria en el siguiente orden $pdf=new FPDF('formato','unidad de medida','tamaño');
+
+</li><li>En la linea $pfd-&gt;AddPage(); añadimos una página.
+
+</li><li>Con SetFont(); le damos formato al texto diciendo el tipo de letra, si es en negrita o no, y el tamaño de la letra.
+
+</li><li>Ya en la linea $pdf-&gt;Cell(); empezamos a escribir el contenido de la página. Empezamos diciendo el ancho de la celda donde vamos a escribir, el alto de la celda, y el contenido de la celda. Tiene algunos parámetros más que iremos explicando detenidamente en los siguientes artículos.
+
+</li><li>La ultima linea $pdf-&gt;Output(); lo que hace es cerrar el archivo y enviarlo al navegador. Es importante no poner esta linea antes de terminar de escribir el archivo ya que nos dará error. Además si no lo pones justo al final y escribes algunas lineas más de código no relacionado con el PDF puede aparecerte el documento en blanco.
+</li></ul>
+<br>
+Bueno como vemos este primer ejemplo es sencillo, aunque no hemos profundizado en todas las opciones de las funciones que hemos visto para la generación de archivos PFD desde PHP..
+<p>
+En el siguiente artículo veremos cada una de las funciones nombradas anteriormente y empezaremos a darle un poco de estilo a la cabecera.			</p></div>
+			<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- dw_articulos_inferior -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2899450519669111" data-ad-slot="4207152414" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>						<footer>
+						  	<div class="colaborador">
+					<div class="imagen_autor"><div class="imagen"><img class="auto" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/1630.jpg" width="120" height="140"></div></div>					<div id="descripcion-autor" class="fr tar">
+						<h2>Autor</h2>
+						<h3>
+							<a href="https://desarrolloweb.com/contacta/142.html">
+								<b>Sara Alvarez</b>
+							</a>
+							<br>
+																					<div class="col_1">
+								<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/follow_button.5b6375bb17bd9edb2f4e7f8f12971999.es(1).html" style="position: static; visibility: visible; width: 131px; height: 20px;" data-screen-name="Gimawari"></iframe>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							</div>
+													</h3>
+						<div class="col_1"></div>
+						<div class="col_1">Equipo DesarrolloWeb.com</div>
+					</div>
+				</div>
+								<div class="colaborador">
+									</div>
+				<div class="fr">
+					<a href="https://desarrolloweb.com/articulos/introduccion-fpdf.html#" class="button" onclick="scroll($(&#39;body&#39;),&#39;.articulo h1&#39;);return false;">Subir <span class="icon-arrow-up"></span></a>
+				</div>
+
+
+
+
+
+
+
+															<div class="col_1">
+					<h2 class="cabeceraAzul"><b>Manual</b></h2><ul><li><a href="https://desarrolloweb.com/manuales/manual-fpdf.html">Crear PDF en PHP con FPDF</a></li></ul>				</div>
+				<div class="col_1 mt">
+					<div class="fr"><a href="https://desarrolloweb.com/articulos/funciones-fpdf.html" class="button">Funciones en FPDF <span class="icon-arrow-right2"></span></a></div>				</div>
+
+
+				<div class="col_1">
+					<a name="compartir"></a>
+					<h2 class="cabeceraAzul"><b>Compartir</b></h2>
+										<div class="col_1 mt">
+
+	<script type="text/javascript" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/plusone.js.descarga" gapi_processed="true">
+	  {lang: 'es'}
+	</script>
+
+	
+	<div class="col_1">
+		<ul class="col_1 inline_list redes_sociales">
+			<li>
+				<script src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/in.js.descarga" type="text/javascript">
+					lang: es_ES
+				</script>
+				<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1494918997032_1-container" class="IN-top IN-empty"><span id="li_ui_li_gen_1494918997032_1" class="IN-top"><span id="li_ui_li_gen_1494918997032_1-inner" class="IN-top"><span id="li_ui_li_gen_1494918997032_1-content" class="IN-top">0</span></span></span></span></span><br><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1494918996961_0"><a id="li_ui_li_gen_1494918996961_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1494918996961_0-logo">in</span><span id="li_ui_li_gen_1494918996961_0-title"><span id="li_ui_li_gen_1494918996961_0-mark"></span><span id="li_ui_li_gen_1494918996961_0-title-text">Compartir</span></span></a></span></span></span><script type="IN/Share+init" data-counter="top"></script>
+			</li>
+			<li>
+				<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" tabindex="0" vspace="0" width="100%" id="I0_1494918988272" name="I0_1494918988272" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+			</li>
+			<li>
+				<script src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/widgets.js.descarga" type="text/javascript"></script>
+				<div>
+			    <iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/tweet_button.5b6375bb17bd9edb2f4e7f8f12971999.en.html" style="position: static; visibility: visible; width: 60px; height: 20px;" data-url="http://www.desarrolloweb.com/articulos/introduccion-fpdf.html"></iframe>
+				</div>
+			</li>
+			<li>
+				<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/JtmcTFxyLye.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f2642d4a293935c" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/ping.html" style="display: none;"></iframe></div></div></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=459742597430134";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				<div class="fb-like fb_iframe_widget" data-href="http://www.desarrolloweb.com/articulos/introduccion-fpdf.html" data-width="150" data-layout="box_count" data-action="recommend" data-show-faces="false" data-send="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=recommend&amp;app_id=459742597430134&amp;container_width=103&amp;href=http%3A%2F%2Fwww.desarrolloweb.com%2Farticulos%2Fintroduccion-fpdf.html&amp;layout=box_count&amp;locale=es_LA&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=150"><span style="vertical-align: bottom; width: 95px; height: 40px;"><iframe name="f31ad3a8c19b0b" width="150px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/like.html" style="border: none; visibility: visible; width: 95px; height: 40px;" class=""></iframe></span></div>
+			</li>
+		</ul>
+		<div class="col_1">
+					</div>
+	</div>
+
+</div> <!-- col_1 -->				</div>
+
+
+				<div id="comentarios-articulos">
+					<div class="col_1 mt">
+	<h2 class="cabeceraAzul">
+		<a name="comentarios"></a><b>Comentarios</b>
+	</h2>
+
+	<div>
+				<div class="accion">
+			<div class="accion icocoment">
+						</div>
+			<div class="accion addcommentsico">
+				<span class="icon-chat"></span>
+				<a href="https://desarrolloweb.com/comentarios/anadir.php?articulo=3716">Enviar un comentario al artículo</a>
+			</div>
+					</div>
+	</div>
+				<div>
+				<div class="nombre_coment">
+					<h2>Luciano</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					02/2/2010				</div>
+								<b>Muy buena librería</b>
+				<br>
+								<div>
+					Es una muy buena librería a la cual le hice algunos aportes.<br>
+Actualmente la estoy utilizando mucho en varios sitios con muy buen rendimiento:<br>
+http://www.10000artistas.com/calendarios-gratis/ (la utilizo para crear calendarios personalizados con fotos, también para armar el portfolio de cada artista, giftArt y art collage).<br>
+Saludos				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario41327"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(41327, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2><span style="line-height: 55px; height: 55px;">Fdo88</span><div align="center" class="fuente8" style="float: left; margin: 0px 10px 0px 0px;"><a href="https://desarrolloweb.com/usuarios/Fdo88.html" style="text-decoration: none;"><img class="cargatipusuario" id="tipusuario8241" border="0" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/foto_defecto.gif" width="70" height="55" vspace="2"></a>	</div></h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					02/2/2010				</div>
+								<b>Generar PDF con PHP</b>
+				<br>
+								<div>
+					Que buen articulo, justo lo que necesita en este momento, me gustaria saber si puedo definir un diseño y luego solo agregar los valores a los campos.<br>
+<br>
+Gracias				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario41329"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(41329, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2><span style="line-height: 55px; height: 55px;">Santouryu</span><div align="center" class="fuente8" style="float: left; margin: 0px 10px 0px 0px;"><img class="cargatipusuario" id="tipusuario9812" border="0" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/foto_defecto.gif" width="70" height="55" vspace="2">	</div></h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					02/2/2010				</div>
+								<b>Gráficos en PDF</b>
+				<br>
+								<div>
+					Muy interesante el artículo, justo estoy usando la librería FPDF para generar registros en un proyecto universitario, lo que quería saber es que si se pueden insertar gráficos en el PDF mediante FPDF, espero puedan profundizar un poco más en los siguientes artículos. Gracias de antemano.				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario41340"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(41340, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>EfraNET</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					02/2/2010				</div>
+								<b>Interesante clase pero...</b>
+				<br>
+								<div>
+					Me parece interesante la clase y es algo que necesito, de seguro funciona adicionando loa datos desde una base de datos mysql pero lo que mas me preocupa es como crear un tipo plantilla para que sobre eso cree el PDF. Podrían comentar al respecto ??				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario41343"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(41343, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>jitt3</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					06/3/2010				</div>
+								<b>creacion de diseños</b>
+				<br>
+								<div>
+					claro que puedes definir un diseño .. enviarle al documento los parametro que necesites y pintarlos en el pfd...en la pagina de FPDF viene una documentacion completa de su uso				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario42058"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(42058, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Alexey</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					23/4/2010				</div>
+								<b>para crear una tabla</b>
+				<br>
+								<div>
+					Hola me sirvió de mucho tu post , ahora necesito saber como puedo crear una tabla con fpdf , me sirvió el ejemplo pero necesito la tabla con datos que tengo en la Base de Datos. me sría de gran ayuda si me dieras un ejemplo.				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario43054"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(43054, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>orlando</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					07/6/2010				</div>
+								<b>dudas</b>
+				<br>
+								<div>
+					mi duda es que ya teno un pequeño fpdf y jalo los datos de mi base a fpdf en una multiblabla perolos datosd me los esta encimando uno dobre de otro y no me lo esta poniendo en consecutivo.. espero me puedan ayudar gracias aki le mando el pequeño codigo..<br>
+<br>
+gracias de ante mano <br>
+<br>
+while($row=mysql_fetch_array($consulta))<br>
+{<br>
+$pdf-&gt;SetFont('courier','',12);<br>
+$pdf-&gt;SetY($Y_Table_Position);<br>
+$pdf-&gt;SetX(45);<br>
+$pdf-&gt;MultiCell(20,6,$row["des_obra"],1);<br>
+$pdf-&gt;SetY($Y_Table_Position);<br>
+$pdf-&gt;SetX(65);<br>
+$pdf-&gt;MultiCell(100,6,$row["compania"],1);<br>
+$pdf-&gt;SetY($Y_Table_Position);<br>
+$pdf-&gt;SetX(135);<br>
+$pdf-&gt;MultiCell(30,6,$row["fi"],1);<br>
+$pdf-&gt;SetX(135);<br>
+}<br>
+$pdf-&gt;Output();				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario44030"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(44030, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>ruben</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					18/9/2010				</div>
+								<b>tengo un problema</b>
+				<br>
+								<div>
+					haber he segudi la pie de la letra el tutorial peor me da errores constantemente no se k hago mal<br>
+aver os comento mi situacion tengo una web en la cual al pinchar en un enlace se habre una popUp con un aviso legal y tal bien justo debajo al final puse un boton paa k se pueda imprimir en caso de k se kiera pero me gustaria tambien poner un boton de pdf para k en lugar de imprimirlo se pueda al pinchar en ese boton que se coja ese texto se genere un pdf y pueda ser descargado pero no tengo ni idea de como hacerlo				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario46096"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(46096, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>chiquis</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					26/9/2010				</div>
+								<b>pdf con fpdf</b>
+				<br>
+								<div>
+					Buenas tardes..<br>
+soi nueva eb esto de la libreria fpdf, no he echo ningun pdf con esta libreria, mi duda es neesito a fuerzas una base de datos para poder generar un pdf en mi pagina, por favor es urgente gracias de antemano...<br>
+<br>
+por cierto probe el ejemplo anterior y no me genea nada, le puse como nombre ejemplo1.php y al ejecutarlo directamente  me sale el mismo codigo, es decir me sale exactamente esto:<br>
+<br>
+AddPage(); $pdf-&gt;SetFont('Arial','B',16); $pdf-&gt;Cell(40,10,'¡Mi primera página pdf con FPDF!'); $pdf-&gt;Output(); ?&gt; <br>
+<br>
+les agradeceria mucho si pudieran ayudarme,<br>
+<br>
+como lo dije antes soi nueva en esto.. gracias...				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario46235"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(46235, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2><span style="line-height: 55px; height: 55px;">murci</span><div align="center" class="fuente8" style="float: left; margin: 0px 10px 0px 0px;"><img class="cargatipusuario" id="tipusuario3405" border="0" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/foto_defecto.gif" width="70" height="55" vspace="2">	</div></h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					05/12/2010				</div>
+								<b>ayuda</b>
+				<br>
+								<div>
+					Yo instalé este servicio.<br>
+Lo hice en Linux. En Home cree una carpeta public_html e incluí descomprimido los distintos archivos, carpetas, etc. Copié un script de tutorial, le puse tut1.php, pero cuando lo cargo en firefox sale error<br>
+<br>
+localhost/tut1.php<br>
+<br>
+No se donde está el error				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario47451"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(47451, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Elizabeth</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					12/1/2011				</div>
+								<b>PHP CON PDF</b>
+				<br>
+								<div>
+					puedes colocar la estructura completa porq yo se algo basico de php y menos de transformarlo, estoy haciendo mi practica inicial y tengo que traspasar formularios a PDF				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario47971"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(47971, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2><span style="line-height: 55px; height: 55px;">aisaiasm</span><div align="center" class="fuente8" style="float: left; margin: 0px 10px 0px 0px;"><img class="cargatipusuario" id="tipusuario5193" border="0" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/foto_defecto.gif" width="70" height="55" vspace="2">	</div></h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					13/7/2011				</div>
+								<b>Descarga</b>
+				<br>
+								<div>
+					Que tal, me interesa el manual y me gustaría descargarlo, podrían proporcionarme el link de descarga?				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario51076"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(51076, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>fegayo</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					07/10/2011				</div>
+								<b>No pude ver el PDF</b>
+				<br>
+								<div>
+					hOla mi amigo No pude generar el PDF, me marca error :( ...<br>
+FPDF error: Some data has already been output, can't send PDF file<br>
+ese es Mi error espero y me ayudes gracias ...				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario52394"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(52394, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Henry Alvarez</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					15/6/2012				</div>
+								<b>muy bueno</b>
+				<br>
+								<div>
+					pero no he podido bajar la libreria FPDF nunca esta disponible fdpf.org<br>
+si la tienen pasarme porfa para seguir con PHP pues si esto no pasa a impresora <br>
+no sigo o por lo menos muestre en pantalla un reporte<br>
+Henry Alvarez				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario55432"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(55432, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Samuel</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					06/7/2012				</div>
+								<b>Error al Inicio</b>
+				<br>
+								<div>
+					Hola, se ve fácil y sencillo, pero el primer script hace referencia a una pag php que no existe en la descarga y da error, o hice algo mal?				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario55646"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(55646, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2><span style="line-height: 55px; height: 55px;">unefistanoche</span><div align="center" class="fuente8" style="float: left; margin: 0px 10px 0px 0px;"><a href="https://desarrolloweb.com/usuarios/unefistanoche.html" style="text-decoration: none;"><img class="cargatipusuario" id="tipusuario4173" border="0" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/foto_defecto.gif" width="70" height="55" vspace="2"></a>	</div></h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					09/4/2013				</div>
+								<b>Uso para generar documentos predefinidos</b>
+				<br>
+								<div>
+					¿Y esta clase es posible adaptarla sobre, digamos, un formulario, para que genere un documento predefinido sobre el que se asiente los datos recibidos? Algo así como para generar cartas de diversa índole.				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario58088"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(58088, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2><span style="line-height: 55px; height: 55px;">shiny</span><div align="center" class="fuente8" style="float: left; margin: 0px 10px 0px 0px;"><img class="cargatipusuario" id="tipusuario8938" border="0" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/foto_defecto.gif" width="70" height="55" vspace="2">	</div></h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					19/2/2014				</div>
+								<b>Ayuda</b>
+				<br>
+								<div>
+					Tengo una pregunta de novato, como hago para corregir los errores por tildes y ñ???<br>
+Gracias				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario59912"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(59912, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2><span style="line-height: 55px; height: 55px;">joserivass</span><div align="center" class="fuente8" style="float: left; margin: 0px 10px 0px 0px;"><img class="cargatipusuario" id="tipusuario5437" border="0" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/foto_defecto.gif" width="70" height="55" vspace="2">	</div></h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					03/3/2016				</div>
+								<b>Sobre el manualteresante!!!</b>
+				<br>
+								<div>
+					Excelente manual.. Bastante interesante.. ¿Cómo hago para descargarlo?				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario65212"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(65212, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+					<div>
+				<div class="nombre_coment">
+					<h2>Gonzalo</h2>
+				</div>
+			</div>
+						<div class="nofloat"></div>
+			<div class="cajacomentario">
+				<div class="fr tar cajaatributos">
+					19/6/2016				</div>
+								<b>FPDF</b>
+				<br>
+								<div>
+					Genial, funciona a la perfección ideal para mostrar reportes personalizados y en su web http://www.fpdf.org/ esta todo lo necesario para comenzar.				</div>
+				<div class="col_1 mb mt">
+					<div id="spamcomentario66072"><a title="Marcar como spam" href="javascript:void(0)" onclick="return marcarSpam(66072, &#39;comentario&#39;)" style="color: rgb(102, 102, 255);">Marcar como spam</a></div>
+				</div>
+			</div>
+		
+		<div class="accion">
+			<div class="accion icocoment">
+						</div>
+			<div class="accion addcommentsico">
+				<span class="icon-chat"></span>
+				<a href="https://desarrolloweb.com/comentarios/anadir.php?articulo=3716">Enviar un comentario al artículo</a>
+			</div>
+					</div>
+	</div>				</div>
+							</footer>
+		</article>
+	</section>
+	
+		</div>
+      <!-- fin columna principal -->
+
+      <!-- Barra lateral -->
+      <aside>
+
+                <div id="usuarios">
+          <div class="icousuario">
+            <span class="icon-user"></span>
+            <span>Usuarios:</span> <a id="enlacelogin" href="https://desarrolloweb.com/articulos/introduccion-fpdf.html#" onclick="$(&#39;.cu250mdWrapper&#39;).slideToggle();return false;">Login</a> | <a href="https://desarrolloweb.com/comunidad/registro/">Registro</a>
+            <div class="cu250mdWrapper" id="flogin">
+              <div class="cu250md">
+                <div class="accesoUsuarios">Acceso usuarios</div>
+                <div class="errorLoginWrapper">
+                   <div class="errorLogin"></div>
+                </div>
+                <form method="post" action="https://desarrolloweb.com/dologin.php" id="formullogin" onsubmit="return false;">
+                  <input type="hidden" value="" name="id_descarga">
+                  <input type="hidden" value="/" name="origen">
+                  <div>
+                    <label class="fuente8" for="usuario2">E-mail:</label>
+                    <input type="text" maxlength="150" size="14" name="usuario" id="usuario2">
+                  </div>
+                  <div>
+                    <label class="fuente8" for="clave2">Clave:</label>
+                    <input type="password" maxlength="150" size="14" name="clave" id="clave2">
+                  </div>
+                  <div>
+                    <label class="fuente8" for="guardar_clave2">Recordar este usuario</label>
+                    <input type="checkbox" value="1" name="guardar_clave" id="guardar_clave2">
+                  </div>
+
+                  <div class="submitButtonWrapper">
+                    <input type="submit" value="Login" id="btnlogin" onclick="doSubmit(this)">
+                  </div>
+                </form>
+                <div class="accion">
+                  <div class="clearfix">
+                    <a href="https://desarrolloweb.com/comunidad/recordarclave.php"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/key.png" width="16" height="16" alt=""> ¿Olvidaste tu clave?</a>
+                  </div>
+                  <div class="clearfix">
+                    <a href="https://desarrolloweb.com/comunidad/registro/"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/user.png" width="16" height="16" alt=""> Registrarse</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="bannerslat">		<ul>
+		<li><a href="http://www.desarrolloweb.com/js-practico-ya.html"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/4206.jpg"></a></li>
+		<li><a href="https://escuela.it/cursos/arquitectura-profesional-css-con-itcss"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/4216.jpg"></a></li>
+	</ul>
+</div>
+        <div class="col_1 tac">
+          
+        </div>
+      </aside>
+      <!-- Fin de Barra lateral -->
+      <div class="clearfix"></div>
+    </div>
+    <!-- fin div role main -->
+  </div>
+    <!-- fin div supercuerpo -->
+
+
+    <!-- PIE DE P?GINA -->
+    <footer id="pieprincipal">
+      <div id="todopie">
+        <div class="seccionpie">
+          <h1>Principales</h1>
+          <ul>
+            <li><a href="https://desarrolloweb.com/manuales/">Manuales</a></li>
+            <li><a href="https://desarrolloweb.com/faq/">FAQs</a></li>
+            <li><a href="https://desarrolloweb.com/en-directo/">En directo</a></li>
+            <li><a href="https://desarrolloweb.com/videos/">Vídeos</a></li>
+          </ul>
+        </div>
+        <div class="seccionpie">
+          <h1>Monotemáticos</h1>
+          <ul>
+            <li><a href="https://desarrolloweb.com/desde0/">Desde cero</a></li>
+            <li><a href="https://desarrolloweb.com/html/">HTML</a>, <a href="https://desarrolloweb.com/css/">CSS</a></li>
+            <li><a href="https://desarrolloweb.com/javascript/">Javascript</a>, <a href="https://desarrolloweb.com/ajax/">Ajax</a></li>
+            <li><a href="https://desarrolloweb.com/diseno-web/">Diseño</a>, <a href="https://desarrolloweb.com/asp/">ASP</a></li>
+          </ul>
+        </div>
+        <div class="seccionpie">
+          <h1>Blogging</h1>
+          <ul>
+            <li><a href="https://desarrolloweb.com/actualidad/">Actualidad</a></li>
+            <li><a href="https://desarrolloweb.com/de_interes/">De interés</a></li>
+            <li><a href="https://desarrolloweb.com/agenda/">Agenda</a></li>
+          </ul>
+        </div>
+        <div class="seccionpie" id="encuentranos">
+          <div class="fb">
+            <a href="https://www.facebook.com/desarrollowebcom" class="enrs" target="_blank">
+              <span class="icon-facebook2"></span>
+            </a>
+          </div>
+          <div class="twitter"><a href="http://twitter.com/deswebcom" class="enrs" target="_blank"><span class="icon-twitter2"></span></a></div>
+          <div class="youtube">
+            <a href="http://www.youtube.com/user/desarrollowebcom" class="enrs" target="_blank">
+              <span class="icon-youtube2"></span>
+            </a>
+          </div>
+          <div class="googleplus">
+            <a href="https://plus.google.com/+desarrolloweb" class="enrs" target="_blank"><span class="icon-google-plus2"></span></a>
+          </div>
+
+        </div>
+        <div class="seccionpie" id="powered">
+          <h1>Powered by:</h1>
+          <ul>
+            <li><a href="http://www.apachectl.com/" target="_blank"><img src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/apachectl.gif"></a></li>
+          </ul>
+        </div>
+      </div> <!-- todo pie -->
+      <div class="clearfix"></div>
+      <div id="piefin">
+        <ul>
+          <li><a href="https://desarrolloweb.com/">Desarrolloweb.com</a></li>
+          <li><a href="https://desarrolloweb.com/copyright/">Copyright</a></li>
+          <li><a href="https://desarrolloweb.com/anunciese/">Publicidad</a></li>
+          <li><a href="https://desarrolloweb.com/acercade/">Acerca de</a></li>
+          <li><a href="https://desarrolloweb.com/datos-legales/">Datos legales</a></li>
+          <li><a href="https://desarrolloweb.com/datos-legales/cookies.php">P. de cookies</a></li>
+          <li><a href="https://desarrolloweb.com/contacta/">Contacta</a></li>
+        </ul>
+      </div>
+
+    </footer>
+    <!-- FIN PIE DE PAGINA -->
+  </div>
+  <!-- fin container -->
+
+
+  <script src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/script-min.js.descarga"></script>
+
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-365134-1', 'desarrolloweb.com');
+  ga('send', 'pageview');
+
+  </script>
+
+<div class="contcookies">Como la mayoría, usamos cookies para personalizar la navegación. Nuestros partner de redes sociales analítica y anuncios también pueden instalar cookies en tu navegador. Si sigues navegando entendemos que aceptas la colecta de datos y que se compartan datos con terceros. Existe una <a href="https://desarrolloweb.com/datos-legales/cookies.php">política de cookies</a> para más información. <a href="https://desarrolloweb.com/articulos/introduccion-fpdf.html#" class="cookiesaceptar">Aceptar</a></div><iframe name="oauth2relay1844063771" id="oauth2relay1844063771" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Instalación y primeros pasos para generar PDF en PHP con FPDF_files/saved_resource.html"></iframe></body></html>

@@ -1,0 +1,653 @@
+@font-face {
+    font-family: miFuente;
+    src: url('./../_fuentes/Quantico-Regular.ttf');
+}
+* {
+    font-family: miFuente;
+}
+/***********************
+INDEX CABECERA Y FOOTER
+***********************/
+div.relativo {
+    position: relative;
+}
+li::selection, td::selection, span::selection, p::selection {
+    background-color: yellow;
+    color: darkred;
+}
+header {
+    width: 100%;
+}
+.cajaLogoGif{
+    display: flex;
+    align-items: center;	
+    /*justify-content: center;*/
+    height: 100%;
+}
+div#inner-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: linear-gradient(to right, deepskyblue, darkred, darkred, darkred);
+    border: 4px solid darkred;
+    height: 9em;
+    text-align: center;
+    width: 100%;
+}
+div#inner-header2 {
+    margin-top: 9em;
+    padding: 1%;
+}
+div#inner-footer2 {
+    background: linear-gradient(to right, deepskyblue, darkred, darkred, darkred);
+}
+footer #inner-footer2 {
+    text-align: center;
+}
+div#inner-footer2{
+    display: flex;
+    align-items: center;	
+    justify-content: center;
+    height: 2.5em;
+    color: white;
+    border: 4px solid darkred;
+    font-size: 130%;
+    transition: box-shadow ease 3s;
+}
+div#inner-footer2:hover{
+    box-shadow: inset 2500px 0 0 0 black;
+}
+div#inner-footer2 a{
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+footer #inner-footer2 a:hover{
+    text-decoration: none;
+    color: white;
+}
+span.verTelefonoEmail {
+    cursor: pointer;
+}
+span.verTelefonoEmail span {
+    font-weight: bolder;
+}
+nav{
+    display: flex;
+    align-items: center;	
+    justify-content: center;
+    height: 100%;
+}
+nav ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-variant: small-caps;
+	font-size: 180%;
+}
+nav ul li {
+    display: inline;
+    padding: 1%;
+    transition: box-shadow ease 1s;
+}
+nav ul li:hover {
+    box-shadow: inset 0 0 0 200px black;
+}
+nav li a, footer a {
+	color: deepskyblue;
+}
+nav li a:hover, nav li a:focus, footer a:focus {
+    text-decoration: none;
+	color: white;
+	text-shadow: 3px 3px 1px deepskyblue;
+}
+.owl-theme .owl-nav [class*=owl-] {
+    background: darkred;
+    color: deepskyblue;
+    width: 10%;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: black;
+}
+.owl-theme .owl-dots .owl-dot span {
+    background: darkred;
+}
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: black;
+    color: deepskyblue;
+}
+div#marcasDeVehiculos {
+    padding: 0.5%;
+    margin: 0;
+}
+div#marcasDeVehiculos div {
+    padding-left: 0.1%;
+    padding-right: 0.1%;
+}
+div#marcasDeVehiculos div.logoCitroen {
+    background-image: url("./../_imagenesCSS/logos_marcas/logo_citroen.jpg");
+}
+div#marcasDeVehiculos div.logoAudi {
+    background-image: url("./../_imagenesCSS/logos_marcas/logo_audi.jpg");
+}
+div#marcasDeVehiculos div.logoFerrari {
+    background-image: url("./../_imagenesCSS/logos_marcas/logo_ferrari.jpg");
+}
+div#marcasDeVehiculos div.logoLamb {
+    background-image: url("./../_imagenesCSS/logos_marcas/logo_lamb.jpg");
+}
+div#marcasDeVehiculos div.logoRenault {
+    background-image: url("./../_imagenesCSS/logos_marcas/logo_renault.jpg");
+}
+div#marcasDeVehiculos div.logoSuzuki {
+    background-image: url("./../_imagenesCSS/logos_marcas/logo_suzuki.jpg");
+}
+div#marcasDeVehiculos img {
+    width: 100%;
+    height: auto;
+}
+/***********************
+INDEX PRINCIPAL CENTRAL
+***********************/
+nav .glyphicon {
+    color: white;
+}
+div.datosVehiculo ul {
+    list-style-image: url("./../_imagenesCSS/estrella.png");
+}
+div.datosVehiculo legend, div.datosReserva legend {
+    margin: 0;
+}
+div#principal {
+    width: 80%;
+    margin: auto;
+}
+/*div#inner-principal {
+    min-height: 430px;
+}*/
+#menuCategorias p {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+#menuCategorias {
+    overflow: auto;
+    float: left;
+    width: 22%; 
+    padding: 1%;
+    background-color: darkred;
+    height: 390px;
+}
+#menuCategorias ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 140%;
+}
+#menuCategorias ul li {
+    transition: box-shadow ease 2s;
+    line-height: 180%;
+}
+#menuCategorias ul li a {
+    color: deepskyblue;
+    text-decoration: none;
+    padding: 1%;
+}
+#menuCategorias ul li:hover {
+	box-shadow: inset 400px 0 0 0 black;
+    border-left: 8px solid deepskyblue;
+    border-right: 8px solid deepskyblue;
+    text-align: center;
+}
+#menuCategorias ul li a:hover {
+    color: white;
+}
+div#novedades {
+    width: 78%;
+    float: left;
+    /*min-height: 422px;*/
+}
+div#principal h3, footer h3, section#seccion h3 {
+    color: deepskyblue;
+    text-align: center;
+    font-variant: small-caps;
+    margin:0;
+    background: linear-gradient(to right, darkred, darkred, black, black, black, black);
+    padding: 0.5%;
+}
+div#novedades div.vehiculos2Novedades div.estado, div#resto div.vehiculos12Disponibles div.reservar {
+    background-color: darkred;
+    opacity: 0.8;
+    position: absolute;
+    padding: 1%;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 5%;
+    transition: box-shadow ease 2s;
+}
+div.estado h4, div.reservar a {
+    color: deepskyblue;
+    text-transform: uppercase;
+    transition: color 2s;
+}
+div.reservar h4, div.estado h4 {
+    margin: 0;
+}
+div#resto div.vehiculos12Disponibles div.reservar:hover {
+    box-shadow: inset 800px 0 0 0 black;
+    border-left: 8px solid deepskyblue;
+    border-right: 8px solid deepskyblue;
+    opacity: 1;
+}
+div.reservar a:hover {
+    text-decoration: none;
+    color: white;
+}
+div#resto {
+    float: left;
+    width: 100%;
+}
+div#resto div.vehiculos12Disponibles, div#novedades div.vehiculos2Novedades {
+    width: 50%;
+    float: left;
+    padding: 0.3%;
+    text-align: center;
+}
+div.vehiculos2Novedades p, div.vehiculos12Disponibles p{
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    padding: 1%;
+    background-color: black;
+    color: deepskyblue;
+}
+span.colorMarcaModelo {
+    color: white;
+    font-weight: bold;
+    font-size: 150%;
+}
+/***********************
+OTRAS PAGINAS
+***********************/
+div.cabeceraHistorial {
+    cursor: pointer;
+    color: deepskyblue;
+    background-color: black;
+    border-left: darkred 3px solid;
+    border-right: darkred 3px solid;
+    border-top: darkred 3px solid;
+}
+div.cabeceraHistorial p {
+    margin: 0;
+}
+div.cabeceraHistorial:hover {
+    color: white;
+    font-weight: bolder;
+}
+div.cuerpoHistorial {
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: darkred 3px solid;
+    border-right: darkred 3px solid; 
+}
+div.cuerpoHistorial div p {
+    font-size: 180%;
+    color: black;
+}
+div.cuerpoHistorial div p span {
+    color: darkred;
+    font-weight: bolder;
+}
+div.datosVehiculo li{
+    line-height: 150%;
+}
+div#noEncontrado {
+    height: 9em;
+    text-align: center;
+    width: 100%;
+    z-index: 15;
+    color: darkred;
+    position: fixed;
+    top: 0;
+    opacity: 0.9;
+}
+div#principal div.top h4 {
+    text-align: center;
+    color: black;
+    background-color: deepskyblue;
+    padding: 1%;
+    margin: 1.5% 0 0 0;
+}
+div#principal div.top h4 span {
+    color: darkred;
+}
+table.tablaTop {
+    text-align: center;
+}
+div.row div .tablaTop {
+    border: 3px solid black;
+}
+div.datosVehiculo {
+    margin-bottom: 1%;
+    padding: 2%;
+    height: 375px;
+}
+div.datosVehiculo span {
+    color: black;
+    font-weight: bolder;
+}
+span.matricula {
+    color: white;
+    font-size: 70%;
+}
+.botonesIndex {
+    font-weight: bold;
+    border: none;
+    width: 10em;
+    height: 3em;
+    background-color: darkred;
+    transition: box-shadow ease 2s, color 4s, width 2s;
+    color: deepskyblue;
+}
+.botonesIndex:hover {
+    box-shadow: inset 300px 0 0 0 black;
+    color: white;
+    width: 15em;
+}
+.botonVerVideo {
+    margin-bottom: 1%;
+}
+div.datosReserva input {
+    text-align: center;
+}
+/***********************
+LOGUIN CLIENTES
+***********************/
+div.cajaAreaPersonal {
+    display: flex;
+    align-items: center;	
+    justify-content: center;
+    height: 100%;
+}
+.cajaAreaPersonal span {
+    color: white;
+    font-weight: bolder;
+    font-size: 120%;
+}
+/***********************
+LOGUIN EMPLEADOS
+***********************/
+#contenedorLoguin {
+    margin: auto;
+    width: 60%;
+}
+#contenedorLoguin h3 {
+    color: black;
+    text-align: center;;
+}
+span.letrasMagneto {
+    font-family: Magneto;
+    color: darkred;
+}
+.logoLoguin {
+    text-align: center;
+}
+#cajaCentralLoguin {
+    text-align: center;
+    background-color: darkred;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    border: solid black 3px;
+    padding: 5%;
+}
+#cajaCentralLoguin input[type="text"], #cajaCentralLoguin input[type="password"], .cajaAreaPersonal input[type="text"], .cajaAreaPersonal input[type="password"], form.mantenimiento input[type="password"], form.mantenimiento input[type="text"], form.mantenimiento input[type="tel"], form.mantenimiento input[type="number"] {
+    text-align: center;
+    font-weight: bolder;
+    background-color: #DDD;
+}
+#cajaCentralLoguin input[type="text"]:focus, #cajaCentralLoguin input[type="password"]:focus, .cajaAreaPersonal input[type="text"]:focus, .cajaAreaPersonal input[type="password"]:focus, form.mantenimiento input[type="password"]:focus, form.mantenimiento input[type="password"]:focus, form.mantenimiento input[type="text"]:focus, form.mantenimiento input[type="tel"]:focus, form.mantenimiento input[type="number"]:focus  {
+    background-color: white;
+    color: darkred;
+}
+
+#cajaCentralLoguin input[type="submit"] {
+    background-color: black;
+}
+/***********************
+MANTENIMIENTO
+***********************/
+#cajaCabecera {
+    height: 10em;
+    text-align: center;
+    width: 100%;
+}
+.cajaLogo, .cajaSesion {
+    height: 7.5em;
+    min-width: 180px;
+}
+.cajaLogo {
+    top:2.5%; 
+    left:2%;
+    position:absolute;
+}
+.cajaCarParadise {
+    margin-top: 2.6%;
+    font-size: 250%;
+    color: black;
+    font-weight: bold;
+}
+.cajaSesion { 
+    font-weight: bolder;
+    color: black;
+    top:2.5%; 
+    right:2%;
+    position:absolute;
+    font-size: 130%;
+    text-align: right;
+}
+.alert {
+    margin-bottom: 1%;
+}
+#contenedorMantenimiento h3 {
+    text-align: center;
+    color: black;
+    text-shadow: 3px 3px 1px deepskyblue;
+}
+#contenedorMantenimiento {
+    width: 70%;
+    margin: auto;
+}
+#contenedorMantenimiento div {
+    height: 5em;
+}
+#contenedorMantenimiento div a {
+    font-size: 160%;
+    font-weight: bold;
+    transition: color 2s, font-size 1s, text-shadow 3s;
+}
+#contenedorMantenimiento div a:hover {
+    font-size: 220%;
+    border: solid 5px black;
+    color: black;
+    text-shadow: 3px 3px 1px deepskyblue;
+}
+.glyphicon {
+    color: green;
+}
+.glyphicon-minus-sign {
+    color: darkred;
+}
+.glyphicon:hover {
+    color: darkred;
+}
+.colorVerLista {
+    color: limegreen;
+    text-align: center;
+}
+.glyphicon-road:hover, .glyphicon-align-justify:hover {
+    color: deepskyblue;
+}
+.colorModificar {
+    color: orange;
+    text-align: center;
+}
+.colorBorrar {
+    color: red;
+    text-align: center;
+}
+th {
+    background-color: darkred;
+    color: white;
+}
+th:hover { /* tr de las cabeceras th */
+    color: deepskyblue;
+}
+.inputError {
+    border: solid 2px darkred;
+}
+.pError {
+    color: darkred;
+}
+form.mantenimiento {
+    max-width: 70%;
+}
+input, select {
+    margin-bottom: 5%;
+}
+.form-control {
+    color: darkred;
+}
+legend {
+    color: darkred;
+}
+div.enlacesInferiores, .danger {
+    text-align: center;
+}
+span.cabecera {
+    color: darkred;
+    font-family: Magneto;
+}
+.info {
+    color: darkred;
+    font-weight: bolder;
+}
+input[type="submit"]{
+    margin: 1%;
+}
+/* 
+ESTILOS PARA PAGINACION 
+*/
+#paginacion{
+	text-align: center;
+	background-color:darkred;
+}
+#paginacion a{
+	color: white;
+	padding: 1%;
+    font-weight: bolder;
+}
+#paginacion a:hover{
+	color: deepskyblue;
+}
+.actual{
+	color: deepskyblue;
+}
+/* 
+FIN ESTILOS PAGINACION 
+*/
+.entradaAnadida {
+    text-align: center;
+    font-weight: bolder;
+    color: darkred;
+    position: fixed;
+    top: 0;
+    opacity: 0.9;
+}
+span.x {
+    float: right;
+    color: green;
+    font-weight: bolder;
+}
+span.xBanner {
+    color: green;
+    font-weight: bolder;
+}
+span.x:hover, span.xBanner:hover {
+    cursor: pointer;
+    color: darkred;
+}
+td.PrecioAlquiler, td.Descuento {
+    text-align: center;
+}
+td.PrecioAlquiler {
+    color: green;
+}
+span.FechaInicio {
+    font-weight: bolder;
+}
+h2 {
+    margin-top: 10px;
+}
+.glyphicon-leaf {
+    color:deepskyblue;
+}
+.glyphicon-leaf:hover {
+    color:white;
+}
+/*******************************
+PARA HACERLO RESPONSIVO
+*******************************/
+@media all and (max-width: 1150px){
+    div#menuCategorias{
+        height: 300px;
+    }
+}
+@media all and (max-width: 750px){
+    div.cajaCarParadise{
+        display:none; /* para q desaparezca */
+    }
+    div.cajaLogoGif {
+        display:none; /* para q desaparezca */
+    }
+    nav ul li{
+        font-size: 80%;
+        margin: 0;
+    }
+    div#menuCategorias {
+        width: 100%;
+        text-align: center;
+    }
+    div#novedades {
+        width: 100%;
+}
+    div#inner-header2 {
+        display: none;
+    }
+    div#principal , section#seccion {
+        margin-top: 9.2em;
+    }
+    #inner-footer2 a {
+        display: none;
+    }
+    div#inner-footer2{
+        font-size: 90%;
+    }
+}
+@media all and (max-width: 500px){
+    span.fueraDisplay {
+        display: none;
+    }
+    nav ul li{
+        font-size: 200%;
+    }
+}
+@media all and (max-width: 375px){
+    div#inner-footer2{
+        font-size: 50%;
+    }
+}

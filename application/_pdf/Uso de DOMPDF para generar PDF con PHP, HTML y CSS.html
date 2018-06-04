@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/ -->
+<html class="no-js" lang="es-ES" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="alternate" type="application/rss+xml" title="Oscar Gascón Feed" href="https://oscargascon.es/feed/">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://oscargascon.es/wp-content/media/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://oscargascon.es/wp-content/media/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://oscargascon.es/wp-content/media/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://oscargascon.es/wp-content/media/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://oscargascon.es/wp-content/media/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://oscargascon.es/wp-content/media/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://oscargascon.es/wp-content/media/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://oscargascon.es/wp-content/media/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://oscargascon.es/wp-content/media/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://oscargascon.es/wp-content/media/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://oscargascon.es/wp-content/media/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://oscargascon.es/wp-content/media/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://oscargascon.es/wp-content/media/favicon-16x16.png">
+        <link rel="manifest" href="https://oscargascon.es/wp-content/media/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/wp-content/media/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <title>Uso de DOMPDF para generar PDF con PHP, HTML y CSS</title>
+	<script src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/analytics.js.descarga"></script><script id="twitter-wjs" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/widgets.js.descarga"></script><script>function theChampLoadEvent(e){var t=window.onload;if(typeof window.onload!="function"){window.onload=e}else{window.onload=function(){t();e()}}}</script>
+		<script type="text/javascript">var theChampCloseIconPath = 'https://oscargascon.es/wp-content/plugins/super-socializer/images/close.png';var heateorSsSDKBlockedMsg = `Your browser is blocking some features of this website. Please follow the instructions at <a href=\'http://support.heateor.com/browser-blocking-social-features/\' target=\'_blank\' style=\'color:#33a9d8\'>http://support.heateor.com/browser-blocking-social-features/</a> to unblock these.`</script>
+		<script> var theChampSiteUrl = 'https://oscargascon.es', theChampVerified = 0, theChampEmailPopup = 0; </script>
+			<script> var theChampSharingAjaxUrl = 'https://oscargascon.es/wp-admin/admin-ajax.php', heateorSsUrlCountFetched = [], heateorSsSharesText = 'Shares', heateorSsShareText = 'Share', theChampPluginIconPath = 'https://oscargascon.es/wp-content/plugins/super-socializer/images/logo.png', theChampHorizontalSharingCountEnable = 1, theChampVerticalSharingCountEnable = 0, theChampSharingOffset = 0, theChampCounterOffset = 0;
+				</script>
+			<style type="text/css">
+	.the_champ_horizontal_sharing .theChampSharing{
+					color: #fff;
+				border-width: 0px;
+		border-style: solid;
+		border-color: transparent;
+	}
+		.the_champ_horizontal_sharing .theChampTCBackground{
+		color:#666;
+	}
+		.the_champ_horizontal_sharing .theChampSharing:hover{
+				border-color: transparent;
+	}
+	.the_champ_vertical_sharing .theChampSharing{
+					color: #fff;
+				border-width: 0px;
+		border-style: solid;
+		border-color: transparent;
+	}
+		.the_champ_vertical_sharing .theChampTCBackground{
+		color:#666;
+	}
+		.the_champ_vertical_sharing .theChampSharing:hover{
+				border-color: transparent;
+	}
+				div.the_champ_horizontal_sharing .the_champ_square_count{display: block}
+			.the_champ_horizontal_sharing .the_champ_square_count{
+			display:block;
+			text-indent:0!important;
+			visibility:hidden;
+			background-color:#58B8F8!important;
+			width:auto;
+			height:auto;
+			text-align:center;
+			min-width:8px!important;
+			padding:1px 4px!important;
+			color:#fff!important;
+			font-family:'Open Sans',arial,sans-serif!important;
+			font-size:10px!important;
+			font-weight:600!important;
+			-webkit-border-radius:15px!important;
+			border-radius:15px!important;
+			-webkit-box-shadow:0 2px 2px rgba(0,0,0,.4);
+			box-shadow:0 2px 2px rgba(0,0,0,.4);
+			text-shadow:0 -1px 0 rgba(0,0,0,.2);
+			line-height:14px!important;
+			border:2px solid #fff!important;
+			z-index:1;
+			margin:2px auto!important;
+			box-sizing:content-box!important
+		}	</style>
+	
+<!-- This site is optimized with the Yoast SEO plugin v4.7.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Consejos y tips para generar PDF con PHP y la librería DOMPDF. Instalación, configuración y generación de PDF por medio de HTMl y CSS.">
+<meta name="robots" content="noodp">
+<link rel="canonical" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/">
+<link rel="publisher" href="https://plus.google.com/u/0/+OscarGasconArjol/posts">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Uso de DOMPDF para generar PDF con PHP, HTML y CSS">
+<meta property="og:description" content="Consejos y tips para generar PDF con PHP y la librería DOMPDF. Instalación, configuración y generación de PDF por medio de HTMl y CSS.">
+<meta property="og:url" content="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/">
+<meta property="og:site_name" content="Oscar Gascón">
+<meta property="article:author" content="https://www.facebook.com/oscar.gascon.12">
+<meta property="article:tag" content="PDF">
+<meta property="article:section" content="HTML y CSS">
+<meta property="article:published_time" content="2014-09-14T11:45:28+00:00">
+<meta property="article:modified_time" content="2015-09-15T11:29:03+00:00">
+<meta property="og:updated_time" content="2015-09-15T11:29:03+00:00">
+<meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/static.oscargascon.es/wp-content/media/massive_stars.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="400">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Consejos y tips para generar PDF con PHP y la librería DOMPDF. Instalación, configuración y generación de PDF por medio de HTMl y CSS.">
+<meta name="twitter:title" content="Uso de DOMPDF para generar PDF con PHP, HTML y CSS">
+<meta name="twitter:site" content="@oscargascon">
+<meta name="twitter:image" content="https://s3-eu-west-1.amazonaws.com/static.oscargascon.es/wp-content/media/massive_stars.jpg">
+<meta name="twitter:creator" content="@oscargascon">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Oscar Gascón » Uso de DOMPDF para generar PDF con PHP, HTML y CSS RSS de los comentarios" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/oscargascon.es\/wp-includes\/js\/wp-emoji-release.min.js?ver=d9eafff7c21e690d48052c54896bffd9"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/wp-emoji-release.min.js.descarga" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="yarppWidgetCss-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="roots_css-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/main.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="googlefonts-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="cookielawinfo-style-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/cli-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-syntax-css-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/wp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="slb_core-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/app.css" type="text/css" media="all">
+<link rel="stylesheet" id="the_champ_frontend_css-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/front.css" type="text/css" media="all">
+<link rel="stylesheet" id="the_champ_sharing_default_svg-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/share-svg.css" type="text/css" media="all">
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/jquery.min.js.descarga"></script>
+<script>window.jQuery || document.write('<script src="https://oscargascon.es/wp-content/themes/roots/assets/vendor/jquery/dist/jquery.min.js?1.11.1"><\/script>')</script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/cookielawinfo.js.descarga"></script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/general.js.descarga"></script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/sharing.js.descarga"></script>
+<link rel="https://api.w.org/" href="https://oscargascon.es/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://oscargascon.es/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://oscargascon.es/wp-includes/wlwmanifest.xml"> 
+
+<link rel="shortlink" href="https://oscargascon.es/?p=2360">
+<link rel="alternate" type="application/json+oembed" href="https://oscargascon.es/wp-json/oembed/1.0/embed?url=https%3A%2F%2Foscargascon.es%2Fuso-de-dompdf-para-generar-pdf-con-php-html-y-css%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://oscargascon.es/wp-json/oembed/1.0/embed?url=https%3A%2F%2Foscargascon.es%2Fuso-de-dompdf-para-generar-pdf-con-php-html-y-css%2F&amp;format=xml">
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//oscargascon.es/?wordfence_logHuman=1&hid=A76B1F20156E1587CCF9EA18ECD70975');
+</script>	<style type="text/css">
+		div.wpcf7 .screen-reader-response {
+			display: none;
+		}
+		div.wpcf7 img.ajax-loader {
+			border: none;
+			vertical-align: middle;
+			margin-left: 4px;
+		}
+		div.wpcf7 .form-inline img.ajax-loader {
+			display: inline;
+		}
+		div.wpcf7 div.ajax-error {
+			display: none;
+		}
+		div.wpcf7 .wpcf7-display-none {
+			display: none;
+		}
+		div.wpcf7 .form-inline .form-group {
+			max-width: 250px;
+		}
+		div.wpcf7 .input-group-addon img {
+			height: 100%;
+			width: auto;
+			max-width: none !important;
+			border-radius: 5px;
+		}
+		div.wpcf7 .input-group-addon.input-group-has-image {
+			padding: 0;
+		}
+	</style>
+	    <script type="text/javascript" charset="utf-8" async="" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/timeline.f5dd213113d43f976c8a616c7319825a.js.descarga"></script><script type="text/javascript" async="" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/saved_resource"></script></head>
+<body class="post-template-default single single-post postid-2360 single-format-standard uso-de-dompdf-para-generar-pdf-con-php-html-y-css sidebar-primary">
+
+    <!--[if lt IE 8]>
+      <div class="alert alert-warning">
+    Estás usando un navegador <strong>antiguo</strong>. Por favor <a href="http://browsehappy.com/">actualízalo</a> para mejorar tu experiencia.      </div>
+    <![endif]-->
+
+    <nav class="banner navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="https://oscargascon.es/">
+                <img src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/logo_oscargascon.png" alt="Oscar Gascón">
+                <h1 class="hidden-xs">Diseñador &amp; Desarrollador Web</h1>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" role="navigation">
+            <ul id="menu-navegacion-primaria" class="nav navbar-nav navbar-right"><li class="menu-perfil"><a href="https://oscargascon.es/perfil/">Perfil</a></li>
+<li class="menu-formacion"><a href="https://oscargascon.es/formacion/">Formación</a></li>
+<li class="menu-portfolio"><a href="https://oscargascon.es/portfolio/">Portfolio</a></li>
+<li class="active menu-blog"><a href="https://oscargascon.es/blog/">Blog</a></li>
+</ul>        </div>
+    </div>
+</nav>
+<header style="background-image: url(&quot;https://s3-eu-west-1.amazonaws.com/static.oscargascon.es/wp-content/media/massive_stars.jpg&quot;); background-position: 0px 0px;" class="my-parallax">
+    <div class="container">
+        <div class="header-content">
+            <h1 class="entry-title">
+                                    <a href="https://oscargascon.es/blog/">Blog</a> &gt;&gt;
+                                <span class="hentry" itemprop="name">
+                    Uso de DOMPDF para generar PDF con PHP, HTML y CSS                </span>
+            </h1>
+            <time class="updated" datetime="2014-09-14T11:45:28+00:00">14 de Septiembre de 2014</time>
+        </div>
+        <div class="triangle-container-down">
+            <div class="triangle-down"></div>
+        </div>
+    </div>
+</header>
+<!-- Redes sociales -->
+<section class="social container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-lg-offset-9 col-lg-3 text-center">
+            <a href="http://twitter.com/oscargascon" target="_blank">
+                <span class="icon-social twitter">
+                    <i class="icon-twitter"></i>
+                </span>
+            </a>
+            <a href="https://plus.google.com/+OscarGasconArjol/posts" target="_blank">
+                <span class="icon-social gplus">
+                    <i class="icon-gplus"></i>
+                </span>
+            </a>
+            <a href="http://es.linkedin.com/in/oscargascon/" target="_blank">
+                <span class="icon-social linkedin">
+                    <i class="icon-linkedin"></i>
+                </span>
+            </a>
+                        <a href="https://www.facebook.com/oscar.gascon.12" target="_blank">
+                <span class="icon-social facebook">
+                    <i class="icon-facebook"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>      <div class="wrap container" role="document">
+        <div class="content row">
+            <main class="main" role="main">
+                    <article class="post-2360 post type-post status-publish format-standard has-post-thumbnail hentry category-html-css category-php tag-pdf">
+        <div class="entry-content">
+            <p>DOMPDF es un conversor de HTML a PDF escrito en PHP. Interpreta HTML y CSS para la generación de documentos en PDF con un soporte bastante adecuado para CSS 2.1, incluso algunos avanzados como bordes redondeados en las cajas. En este post presentaré algunas peculiaridades de esta librería que espero ayuden a sacar partido de la versatilidad del HTML para generar documentos en PDF.</p>
+<p><span id="more-2360"></span></p>
+<p>Parece que mucha gente se olvida que HTML permite trabajar en muchos soportes distintos, no solo en display, sino también en impresora. Hoy en día documentación como albaranes de compra en comercio electrónico se generan online para enviar al comprador. Haremos uso de esta característica de HTML para componer HTML ajustado a soporte papel que será el que utilizaremos para generar PDFs.</p>
+<h2>Donde obtener la librería e instalación</h2>
+<p>Podeís obtener la versión más actualizada en <a href="https://github.com/dompdf/dompdf" target="_blank">GitHub</a> y tiene una <a href="http://pxd.me/dompdf/www/examples.php" target="_blank">buena documentación y ejemplos en inglés</a> de uso. Como veis no es especialmente exigente en sus requerimientos:</p>
+<ul class="list check">
+<li>PHP 5.3+ (recomendado)</li>
+<li>DOM extension</li>
+<li>GD extension</li>
+</ul>
+<p>Siguiendo las instrucciones es sencilla su instalación en cualquier proyecto.</p>
+
+<div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span>
+<span style="color: #666666; font-style: italic;">// Cargamos la librería dompdf que hemos instalado en la carpeta dompdf</span>
+<span style="color: #b1b100;">require_once</span> <span style="color: #009900;">(</span><span style="color: #0000ff;">'dompdf/dompdf_config.inc.php'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Introducimos HTML de prueba</span>
+<span style="color: #000088;">$html</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'&lt;h1&gt;Hola mundo!&lt;/h1&gt;'</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Instanciamos un objeto de la clase DOMPDF.</span>
+<span style="color: #000088;">$pdf</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> DOMPDF<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Definimos el tamaño y orientación del papel que queremos.</span>
+<span style="color: #000088;">$pdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set_paper</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"A4"</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">"portrait"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Cargamos el contenido HTML.</span>
+<span style="color: #000088;">$pdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load_html</span><span style="color: #009900;">(</span><span style="color: #990000;">utf8_decode</span><span style="color: #009900;">(</span><span style="color: #000088;">$html</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Renderizamos el documento PDF.</span>
+<span style="color: #000088;">$pdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">render</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Enviamos el fichero PDF al navegador.</span>
+<span style="color: #000088;">$pdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">stream</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'FicheroEjemplo.pdf'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">&lt;?php
+// Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
+require_once ('dompdf/dompdf_config.inc.php');
+
+// Introducimos HTML de prueba
+$html = '&lt;h1&gt;Hola mundo!&lt;/h1&gt;';
+
+// Instanciamos un objeto de la clase DOMPDF.
+$pdf = new DOMPDF();
+ 
+// Definimos el tamaño y orientación del papel que queremos.
+$pdf-&gt;set_paper("A4", "portrait");
+ 
+// Cargamos el contenido HTML.
+$pdf-&gt;load_html(utf8_decode($html));
+ 
+// Renderizamos el documento PDF.
+$pdf-&gt;render();
+ 
+// Enviamos el fichero PDF al navegador.
+$pdf-&gt;stream('FicheroEjemplo.pdf');</p></div>
+
+<h2>Peculiaridades a tener en cuenta</h2>
+<p>Aunque facilita mucho la generación de los documentos es importante tener en cuenta algunos aspectos en lo tocante al HTML y la codificación:</p>
+<ul class="check list">
+<li><strong>Utiliza siempre UTF8</strong>. Aunque ya deberías de saberlo y deberías de utilizarlo siempre como charset por defecto en Bases de datos, codificación de ficheros, etc no está de más recordarlo. DOMPDF utiliza por defecto este charset y no le sienta nada bien la mezcla. Te puedes encontrar con que no muestra el volcado de datos que te interesa simplemente porque se encuentra un carácter en una codificación inadecuada.</li>
+<li><strong>Tamaño del papel y orientación</strong>. Por supuesto puedes elegir el tamaño de papel que desees. La clase que incluye los tamaños de papel y sus dimensiones se encuentra en <cite>include/cpdf_adapter.cls</cite>. Si necesitas utilizar un tamaño de papel personalizado utiliza la siguiente sintaxis con las dimensiones que necesitas:<br>
+<p></p>
+
+<div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="php" style="font-family:monospace;"><span style="color: #000088;">$paper_size</span> <span style="color: #339933;">=</span> <span style="color: #990000;">array</span><span style="color: #009900;">(</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">360</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">360</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$dompdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set_paper</span><span style="color: #009900;">(</span><span style="color: #000088;">$paper_size</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">$paper_size = array(0,0,360,360);
+$dompdf-&gt;set_paper($paper_size);</p></div>
+
+</li>
+<li><strong>El fichero de configuración</strong>. Es el fichero que utilizamos en el include, como verás se encuentra bien documentado, por defecto <cite>dompdf_config.inc.php</cite></li>
+</ul>
+<h2>La generación del HTML</h2>
+<p>Unos breves consejos a la hora de preparar nuestro HTML para generar el PDF:</p>
+<h3>Utiliza tablas en la maquetación</h3>
+<p>Efectivamente. Aquello que no nos cansamos siempre de decir: las tablas se deben de utilizar para mostrar datos tabulares, no para maquetar o diseñar. Olvídate. El soporte que tiene de la propiedad CSS <strong>float:</strong> es bastante limitada así que para simplificar es mejor utilizar tablas como si estuvieras preparando el HTML de una campaña por email.</p>
+<h3>Nada de HTML5</h3>
+<p>Aunque tiene cierto soporte HTML5 tampoco tiene mucho sentido de cara a la generación de ficheros PDF, así que si estás generando el HTML de cero puedes ahorrártelo.</p>
+<h3>Utilización de imágenes en PNG y JPG</h3>
+<p>La renderización de imágenes es perfecta, utilizando cada tipo de fichero para lo que es. Puedes utilizar PNG para logotipos aprovechando que puede manejar canal alpha y transparencia; y los JPG para fotografías.</p>
+<h3>Piensa en papel</h3>
+<p>Aunque es obvio a veces se nos olvida que el soporte al que va destinado nuestro HTML es papel. Por este motivo (y más sin contamos con una plantilla de documento) debemos de utilizar medidas basadas en mm en todo lo relativo a márgenes de documento, en tablas, etc. </p>
+<p>Lo mismo se aplica a los tipos de letra. Recuerda que la unidad a utilizar son los .pt (puntos). Si cuentas con un documento de texto (.doc, .odt, etc) en el que basarte aún mejor, tendrás toda esa información en el acto consultando las propiedades del documento o colocando el ratón sobre los tipos de letra para conocer su propiedades.</p>
+<p>Si no cuentas con una plantilla digital consigue una regla de diseño gráfico que mida tanto en mm como en pt. </p>
+<h3>Márgenes a cero</h3>
+<p>Por defecto a la hora de preparar el HTML te aconsejo que situes los márgenes a 0 y sea en el body donde definas los márgenes.</p>
+
+<div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="css" style="font-family:monospace;">html <span style="color: #00AA00;">{</span>
+  <span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">}</span>
+body <span style="color: #00AA00;">{</span>
+  <span style="color: #000000; font-weight: bold;">font-family</span><span style="color: #00AA00;">:</span> <span style="color: #ff0000;">"Times New Roman"</span><span style="color: #00AA00;">,</span> <span style="color: #993333;">serif</span><span style="color: #00AA00;">;</span>
+  <span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span> <span style="color: #933;">45mm</span> <span style="color: #933;">8mm</span> <span style="color: #933;">2mm</span> <span style="color: #933;">8mm</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">}</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">html {
+  margin: 0;
+}
+body {
+  font-family: "Times New Roman", serif;
+  margin: 45mm 8mm 2mm 8mm;
+}</p></div>
+
+<h3>Saltos de página manuales</h3>
+<p>Los saltos de página como cualquier editor DOMPDF los realiza de forma auomática, pero podemos forzar que la aparición de un elemento en HTML provoque el salto de linea. Yo generalmente utilizo el tag &lt;hr&gt; con las siguientes propiedades CSS:</p>
+
+<div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="css" style="font-family:monospace;">hr <span style="color: #00AA00;">{</span>
+  <span style="color: #000000; font-weight: bold;">page-break-after</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">always</span><span style="color: #00AA00;">;</span>
+  <span style="color: #000000; font-weight: bold;">border</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+  <span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+  <span style="color: #000000; font-weight: bold;">padding</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">}</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">hr {
+  page-break-after: always;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}</p></div>
+
+<h3>Incluir cabeceras y pies de página fijos</h3>
+<p>DOMPDF hace un uso bastante inteligente de la propiedad <strong>position:</strong> de CSS. Cualquier elemento situado con <strong>fixed</strong> se repetirá a lo largo de todas las páginas del documento. Lo cual hace que sea una propiedad muy útil para incluir logos de empresa, direcciones, datos de contacto, etc.</p>
+<p>Si por contra utilizamos <strong>position: absolute</strong> su comportamiento será el habitual, pudiendo situar un elemento en cualquier posición de la página con las propiedades <strong>top:</strong> y <strong>left:</strong>. Pero sólo en la página actual.</p>
+<h3>Incluir números de página</h3>
+<p>DOMPDF permite ejecutar código PHP embebido. Tienes más información en la documentación oficial, pero uno muy importante es el relativo a la paginación. En cualquier documento poder incluir el número de páginas es fundamental y para ello podemos utilizar el siguiente código que nos incluirá la paginación en el punto que le indiquemos:</p>
+
+<div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="php" style="font-family:monospace;"><span style="color: #339933;">&lt;</span>script type<span style="color: #339933;">=</span><span style="color: #0000ff;">"text/php"</span><span style="color: #339933;">&gt;</span>
+  <span style="color: #b1b100;">if</span> <span style="color: #009900;">(</span><span style="color: #990000;">isset</span><span style="color: #009900;">(</span><span style="color: #000088;">$pdf</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span>
+    <span style="color: #009900;">{</span>
+      <span style="color: #000088;">$font</span> <span style="color: #339933;">=</span> Font_Metrics<span style="color: #339933;">::</span><span style="color: #004000;">get_font</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Arial"</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">"bold"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+      <span style="color: #000088;">$pdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">page_text</span><span style="color: #009900;">(</span><span style="color: #cc66cc;">765</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">550</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">"Pagina {PAGE_NUM} de {PAGE_COUNT}"</span><span style="color: #339933;">,</span> <span style="color: #000088;">$font</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">9</span><span style="color: #339933;">,</span> <span style="color: #990000;">array</span><span style="color: #009900;">(</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">}</span>
+<span style="color: #000000; font-weight: bold;">&lt;/script&gt;</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">&lt;script type="text/php"&gt;
+  if (isset($pdf))
+    {
+      $font = Font_Metrics::get_font("Arial", "bold");
+      $pdf-&gt;page_text(765, 550, "Pagina {PAGE_NUM} de {PAGE_COUNT}", $font, 9, array(0, 0, 0));
+    }
+&lt;/script&gt;</p></div>
+
+<p><strong>IMPORTANTE</strong>: Recuerda activar en la configuración de DOMPDF <code>DOMPDF_ENABLE_PHP = true</code> o de lo contrario no ejecutará el código y no veremos la paginación.</p>
+<h3>Empleo de buffers y $_SESSION</h3>
+<p>Cuando quieras generar algún tipo de documento complejo en HTML comprobarás que ciertos modos de generarlo en PHP no son válidos, sobre todo en aquellos en el que vas generando el HTML dentro de un buffer para volcar luego todo el contenido en una variable en PHP. Por algún motivo no suele funcionar de forma directa. Y por otro lado ir concatenando cadenas y cadenas de HTML al final es bastante aburrido.</p>
+<p>Por ese motivo lo que suelo hacer es grabar el contenido HTML por medio de buffers, almacenar la información en una variable de sessión; y en un controlador aparte recuperar el contenido de la variable de sessión con el HTML para que lo genere DOMPDF. Por ejemplo:</p>
+
+<div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span>
+<span style="color: #990000;">session_start</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> 
+<span style="color: #666666; font-style: italic;">// Iniciamos el buffer</span>
+<span style="color: #990000;">ob_start</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  <span style="color: #666666; font-style: italic;">// Operaciones para generar el HTML que pueden ser llamadas a Bases de Datos, while, etc...</span>
+  <span style="color: #b1b100;">require_once</span> <span style="color: #009900;">(</span><span style="color: #0000ff;">'plantilla.html'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">(</span><span style="color: #339933;">...</span><span style="color: #009900;">)</span>
+  <span style="color: #666666; font-style: italic;">// Volcamos el contenido del buffer</span>
+  <span style="color: #000088;">$html</span> <span style="color: #339933;">=</span> <span style="color: #990000;">ob_get_clean</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+  <span style="color: #666666; font-style: italic;">// Creamos la variable de sesión</span>
+  <span style="color: #000088;">$_SESSION</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'pdf'</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'content'</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$html</span><span style="color: #339933;">;</span>
+  <span style="color: #000088;">$_SESSION</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'pdf'</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'filename'</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'Informe.pdf'</span><span style="color: #339933;">;</span>
+  <span style="color: #000088;">$printpdf</span> <span style="color: #339933;">=</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #339933;">;</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">&lt;?php
+session_start(); 
+// Iniciamos el buffer
+ob_start();
+  // Operaciones para generar el HTML que pueden ser llamadas a Bases de Datos, while, etc...
+  require_once ('plantilla.html');
+  (...)
+  // Volcamos el contenido del buffer
+  $html = ob_get_clean();
+
+  // Creamos la variable de sesión
+  $_SESSION['pdf']['content'] = $html;
+  $_SESSION['pdf']['filename'] = 'Informe.pdf';
+  $printpdf = true;</p></div>
+
+<p>Desde aquí procedemos a la carga del controlador que ejecuta el siguiente código si encuentra $printpdf = true; en otro punto de la ejecución.</p>
+
+<div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span>
+<span style="color: #990000;">session_start</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #666666; font-style: italic;">// DOMPDF según el tipo de documento a imprimir o la cantidad puede ser muy exigente así que aumentamos la memoria disponible</span>
+<span style="color: #990000;">ini_set</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"memory_limit"</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">"128M"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Cargamos DOMPDF</span>
+<span style="color: #b1b100;">require_once</span> <span style="color: #0000ff;">'dompdf/dompdf_config.inc.php'</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Recuperamos la información de la sesión</span>
+<span style="color: #000088;">$html</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$_SESSION</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'pdf'</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'content'</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$filename</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$_SESSION</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'pdf'</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'filename'</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Volcamos las páginas en papel</span>
+<span style="color: #000088;">$dompdf</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> DOMPDF<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$dompdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set_paper</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'A4'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'landscape'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Se carga el codigo html</span>
+<span style="color: #000088;">$dompdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load_html</span><span style="color: #009900;">(</span><span style="color: #000088;">$html</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #666666; font-style: italic;">// Lanzamos a render</span>
+<span style="color: #000088;">$dompdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">render</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #666666; font-style: italic;">// Guardamos a PDF</span>
+<span style="color: #000088;">$dompdf</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">stream</span><span style="color: #009900;">(</span><span style="color: #000088;">$filename</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Borramos la variable de sesión</span>
+<span style="color: #990000;">unset</span><span style="color: #009900;">(</span><span style="color: #000088;">$_SESSION</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'pdf'</span><span style="color: #009900;">]</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">&lt;?php
+session_start();
+// DOMPDF según el tipo de documento a imprimir o la cantidad puede ser muy exigente así que aumentamos la memoria disponible
+ini_set("memory_limit", "128M");
+
+// Cargamos DOMPDF
+require_once 'dompdf/dompdf_config.inc.php';
+
+// Recuperamos la información de la sesión
+$html = $_SESSION['pdf']['content'];
+$filename = $_SESSION['pdf']['filename'];
+
+// Volcamos las páginas en papel
+$dompdf = new DOMPDF();
+$dompdf-&gt;set_paper('A4', 'landscape');
+
+// Se carga el codigo html
+$dompdf-&gt;load_html($html);
+// Lanzamos a render
+$dompdf-&gt;render();
+// Guardamos a PDF
+$dompdf-&gt;stream($filename);
+
+// Borramos la variable de sesión
+unset($_SESSION['pdf']);</p></div>
+
+<p>Eso es todo. Espero que os sea de utilidad.</p>
+<h2>Fuentes</h2>
+<p><a href="https://github.com/dompdf/dompdf">Página oficial de DOMPDF</a><br>
+<a href="http://manuais.iessanclemente.net/index.php/Generaci%C3%B3n_de_PDF&#39;s_con_PHP_y_la_librer%C3%ADa_DOMPDF">Generación de PDF’s con PHP y la librería DOMPDF<br>
+De Manuais Informática – IES San Clemente.</a><br>
+<a href="http://stackoverflow.com/questions/17681044/dompdf-stuck-on-letter-paper-size">Personalizar el tamaño de página en DOMPDF</a></p>
+<div style="clear: both"></div><div class="the_champ_sharing_container the_champ_horizontal_sharing" super-socializer-data-href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/" super-socializer-no-counts="1"><div class="the_champ_sharing_title" style="font-weight:bold">Comparte si te ha gustado</div><ul class="the_champ_sharing_ul"><li class="theChampSharingRound"><ss class="the_champ_square_count the_champ_twitter_count">&nbsp;</ss><i style="width:30px;height:30px;" alt="Twitter" title="Twitter" class="theChampSharing theChampTwitterBackground" onclick="theChampPopup(&quot;http://twitter.com/intent/tweet?text=Uso%20de%20DOMPDF%20para%20generar%20PDF%20con%20PHP%2C%20HTML%20y%20CSS&amp;url=https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/&quot;)"><ss style="display:block;" class="theChampSharingSvg theChampTwitterSvg"></ss></i></li><li class="theChampSharingRound"><ss class="the_champ_square_count the_champ_google_plus_count" style="visibility:visible;">28</ss><i style="width:30px;height:30px;" alt="Google plus" title="Google plus" class="theChampSharing theChampGoogleplusBackground" onclick="theChampPopup(&quot;https://plus.google.com/share?url=https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/&quot;)"><ss style="display:block;" class="theChampSharingSvg theChampGoogleplusSvg"></ss></i></li><li class="theChampSharingRound"><ss class="the_champ_square_count the_champ_linkedin_count" style="visibility:visible;">6</ss><i style="width:30px;height:30px;" alt="Linkedin" title="Linkedin" class="theChampSharing theChampLinkedinBackground" onclick="theChampPopup(&quot;http://www.linkedin.com/shareArticle?mini=true&amp;url=https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/&amp;title=Uso%20de%20DOMPDF%20para%20generar%20PDF%20con%20PHP%2C%20HTML%20y%20CSS&quot;)"><ss style="display:block;" class="theChampSharingSvg theChampLinkedinSvg"></ss></i></li><li class="theChampSharingRound"><ss class="the_champ_square_count the_champ_facebook_count" style="visibility:visible;">6</ss><i style="width:30px;height:30px;" alt="Facebook" title="Facebook" class="theChampSharing theChampFacebookBackground" onclick="theChampPopup(&quot;https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Foscargascon.es%2Fuso-de-dompdf-para-generar-pdf-con-php-html-y-css%2F&quot;)"><ss style="display:block;" class="theChampSharingSvg theChampFacebookSvg"></ss></i></li><li class="theChampSharingRound"><ss class="the_champ_square_count">&nbsp;</ss><i style="width:30px;height:30px;margin-left:9px !important;visibility:visible;" title="Total Shares" alt="Total Shares" class="theChampSharing theChampTCBackground"><div class="theChampTotalShareCount" style="font-size: 18.6px">40</div><div class="theChampTotalShareText" style="font-size: 11.4px">Shares</div></i></li></ul><div style="clear:both"></div></div><div style="clear: both"></div>            <br>
+            <p>
+                <b>Autor:</b> <span class="author vcard" itemprop="author">Oscar Gascón Arjol</span><br>
+                <b>Última actualización:</b> 
+                <time class="entry-date date updated" itemprop="dateCreated" datetime="2015-09-15T11:29:03+00:00">14 de Septiembre de 2014</time>
+            </p>
+        </div>
+        <footer>
+            </footer>
+    
+<section id="comments" class="comments">
+    <div class="triangle-up"></div>
+      <h3>54 comentarios</h3>
+    <ol class="comment-list">
+      		<li id="comment-225" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-225" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/865268c6e826e77a311e349d0f75fe31" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/865268c6e826e77a311e349d0f75fe31?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/865268c6e826e77a311e349d0f75fe31?s=64&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-32 photo lazy-loaded" height="32" width="32" srcset="https://secure.gravatar.com/avatar/865268c6e826e77a311e349d0f75fe31?s=64&amp;d=mm&amp;r=g 2x"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/865268c6e826e77a311e349d0f75fe31?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/865268c6e826e77a311e349d0f75fe31?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="http://woscargascon.es/" rel="external nofollow" class="url">wal</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-225">
+							<time datetime="2014-10-15T23:59:31+00:00">
+								15 15UTC Octubre 15UTC 2014 a las 11:59 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>como haria para imprimir la cabecera de una tabla en varias hojas con dompdf</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=225#respond" onclick="return addComment.moveForm( &quot;div-comment-225&quot;, &quot;225&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a wal">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-226" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-226" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/f4476bfddce8cab9b81995b9ba1f5f42" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-32 photo lazy-loaded" height="32" width="32" srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-226">
+							<time datetime="2014-11-02T10:15:28+00:00">
+								2 02UTC Noviembre 02UTC 2014 a las 10:15 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Para ello, si quieres imprimir la cabecera en todas las páginas deberías de utilizar las propiedades CSS <em>position: fixed</em> y situar con <em>top:</em> y <em>left:</em> con la medida en mm por ejemplo. Recuerda que ahora debes de pensar en soporte papel. De este modo la replicarás en todas las páginas en la posición que le hayas indicado.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=226#respond" onclick="return addComment.moveForm( &quot;div-comment-226&quot;, &quot;226&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-227" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-227" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/714defb6277edd63637ef957e6dcb8ff?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/714defb6277edd63637ef957e6dcb8ff?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/714defb6277edd63637ef957e6dcb8ff?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/714defb6277edd63637ef957e6dcb8ff?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">alfredo</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-227">
+							<time datetime="2014-11-12T20:18:21+00:00">
+								12 12UTC Noviembre 12UTC 2014 a las 8:18 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola amigo, actualmente tengo  #footer .page:after { content: counter(page); font-size: 12px; } y el resultado es Pág 1, Pág 2, segun su numero. Pero l querer implementar este codigo  #footer .page:after { content: counter(page) ” de ” counter(pages); font-size: 12px; } quisiera me mostrara pag 1 de 3, pagina 2 de 3. por dar un ejemplo. pero con el codigo q te envie me sale pag 1 de 0, 2 de 0. espero me entiendas y puedas ayudarme. gracias</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=227#respond" onclick="return addComment.moveForm( &quot;div-comment-227&quot;, &quot;227&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a alfredo">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-228" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-228" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-228">
+							<time datetime="2014-11-14T22:54:56+00:00">
+								14 14UTC Noviembre 14UTC 2014 a las 10:54 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Espero que te sirva la siguiente solución. Yo la implementé en un desarrollo reciente. Se trata de incluir un código similar al siguiente en la cabecera:</p>
+<p>&lt;script type=”text/php”&gt;<br>
+&nbsp;&nbsp;if (isset($pdf))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$font = Font_Metrics::get_font(“Arial”, “bold”);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$pdf-&gt;page_text(765, 550, “Pagina {PAGE_NUM} de {PAGE_COUNT}”, $font, 9, array(0, 0, 0));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&lt;/script&gt;</p>
+<p>Eso sí luego tienes que posicionar la paginación mediante el método page_text del objeto DOMPDF.</p>
+<p>Fuente original: <a href="http://stackoverflow.com/questions/13159645/dompdf-page-number" target="_blank" rel="nofollow">http://stackoverflow.com/questions/13159645/dompdf-page-number</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=228#respond" onclick="return addComment.moveForm( &quot;div-comment-228&quot;, &quot;228&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-229" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-229" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/2839bfd0067afaff216409aed2be6637?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/2839bfd0067afaff216409aed2be6637?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/2839bfd0067afaff216409aed2be6637?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/2839bfd0067afaff216409aed2be6637?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">JESUS GONZALEZ</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-229">
+							<time datetime="2014-11-21T02:43:53+00:00">
+								21 21UTC Noviembre 21UTC 2014 a las 2:43 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola amigo</p>
+<p>Mi problema es el siguiente, cuando es mas de una pagina el encabezado tapa o se superpone sobre la información que continua en la siguiente pagina; es decir la pagina 1 termina con : “este es el fin de la pagina uno” y la pagina 2 inicia con “este es el comienzo de la pagina dos”, pero el encabezado tapa esa linea.</p>
+<p>Que podría hacer en ese caso?</p>
+<p>Gracias de antemano.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=229#respond" onclick="return addComment.moveForm( &quot;div-comment-229&quot;, &quot;229&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a JESUS GONZALEZ">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-230" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-230" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-230">
+							<time datetime="2014-11-21T08:14:01+00:00">
+								21 21UTC Noviembre 21UTC 2014 a las 8:14 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Eso es porque no le has reservado espacio en los márgenes de la página por CSS. Piensa en el &lt;body&gt; como si fuera el papel en blanco. Tienes que definirle márgenes. Por contra, lo que utilices como encabezamiento con <code>position: fixed</code> flota por encima del contenido, por lo que se “monta” sobre él.</p>
+<p>Esto lo podemos evitar si al “body” le asignamos margenes, teniendo en cuenta la altura del encabezado. Si tengo un encbezado que va a ocupar 20mm de altura, puedo reservarle una altura de 30mm siempre en todas las páginas para que no se solapen. Utilizaremos el siguiente CSS, con todos los márgenes de la página.</p>
+<pre>body {
+  margin: 30mm 8mm 2mm 8mm;
+}
+</pre>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=230#respond" onclick="return addComment.moveForm( &quot;div-comment-230&quot;, &quot;230&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-231" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-231" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/02095a11a3be9a1b23e21008b6324b0c?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/02095a11a3be9a1b23e21008b6324b0c?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/02095a11a3be9a1b23e21008b6324b0c?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/02095a11a3be9a1b23e21008b6324b0c?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Walter</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-231">
+							<time datetime="2014-11-27T22:58:27+00:00">
+								27 27UTC Noviembre 27UTC 2014 a las 10:58 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola queria consultarle sobre el tema del dompdf con el css. Tengo un problema que el dompdf no me toma los css de las tablas que tengo en el html, me tira el siguiente error: block_frame_reflower.cls.php on line 171 y el css que esta causando el problema es el siguiente: #tabla{<br>
+                            height:100%;<br>
+                            /*width: 220px;*/<br>
+                            margin:auto;<br>
+                            display: inline-block;<br>
+                        }<br>
+                        table,th,td{<br>
+                            font-family: serif;<br>
+                            font-size: 0.9em;<br>
+                            border:1px solid black;<br>
+                            border-collapse: collapse;<br>
+                        }<br>
+me podria dar alguna ayuda, estoy trabado con este tema y tengo que transformar mi pag a pdf si o si. Desde ya muchas gracias.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=231#respond" onclick="return addComment.moveForm( &quot;div-comment-231&quot;, &quot;231&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Walter">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-232" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-232" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-232">
+							<time datetime="2014-11-28T08:09:58+00:00">
+								28 28UTC Noviembre 28UTC 2014 a las 8:09 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Gracias por tu comentario. La verdad es que con la información que me aportas poco te puedo ayudar. </p>
+<p>Si crees realmente que el problema viene del CSS ve probando a eliminar una a una las lineas del CSS (no comentarlas entre /* */ sino eliminarlas) que estás utilizando hasta que no te arroje el error.</p>
+<p>Si tras eliminar todo el CSS sigue sin funcionar está claro que el problema no es del CSS, sino de código HTML mal formado o de la programación. También te advierto que DOMPDF es especialmente estricto en la formación válida del HTML.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=232#respond" onclick="return addComment.moveForm( &quot;div-comment-232&quot;, &quot;232&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-311" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-311" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/66f33019f807985bd663a5a5a0abce2f?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/66f33019f807985bd663a5a5a0abce2f?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/66f33019f807985bd663a5a5a0abce2f?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/66f33019f807985bd663a5a5a0abce2f?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">ALMA PEREZ</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-311">
+							<time datetime="2015-11-26T19:17:38+00:00">
+								26 26UTC Noviembre 26UTC 2015 a las 7:17 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>La libreria imprime tantas hojas como sea necesario, pero al incrustarle un par de divs manipulados con css sólo imprime 1 hoja con el contenido desbordado hacia abajo</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=311#respond" onclick="return addComment.moveForm( &quot;div-comment-311&quot;, &quot;311&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a ALMA PEREZ">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-312" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-312" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-312">
+							<time datetime="2015-11-26T21:20:20+00:00">
+								26 26UTC Noviembre 26UTC 2015 a las 9:20 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>DOMPDF es muy estricto con el codigo HTML y el CSS. Asegurate de revisar el HTMLy q sea completamente válido. Nada de HTML5. Asegurate también de utilizar en el CSS dimensiones basadas en papel, como mm en los tamaños de los div y no píxeles.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=312#respond" onclick="return addComment.moveForm( &quot;div-comment-312&quot;, &quot;312&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-316" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-316" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/5487b395c7d281bed4785e2c614b0556?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/5487b395c7d281bed4785e2c614b0556?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/5487b395c7d281bed4785e2c614b0556?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/5487b395c7d281bed4785e2c614b0556?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Janner</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-316">
+							<time datetime="2015-12-01T16:21:04+00:00">
+								1 01UTC Diciembre 01UTC 2015 a las 4:21 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Amigo, te agradezco mucho, me has dado las bases para poder lograr mi archivo de reportes.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=316#respond" onclick="return addComment.moveForm( &quot;div-comment-316&quot;, &quot;316&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Janner">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-317" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-317" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-317">
+							<time datetime="2015-12-01T20:46:24+00:00">
+								1 01UTC Diciembre 01UTC 2015 a las 8:46 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Gracias! Me alegro te haya sido útil. <img draggable="false" class="emoji" alt="🙂" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=317#respond" onclick="return addComment.moveForm( &quot;div-comment-317&quot;, &quot;317&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-322" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-322" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/210776d7f367d32498c90f352201854d?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/210776d7f367d32498c90f352201854d?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/210776d7f367d32498c90f352201854d?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/210776d7f367d32498c90f352201854d?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Jose Gamboa</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-322">
+							<time datetime="2016-01-05T05:14:59+00:00">
+								5 05UTC Enero 05UTC 2016 a las 5:14 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>cordial saludo estoy intentando incluir # de pagina con dompdf pero no logro hacer que se muestre, de antemano gracias</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=322#respond" onclick="return addComment.moveForm( &quot;div-comment-322&quot;, &quot;322&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Jose Gamboa">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-323" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-323" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-323">
+							<time datetime="2016-01-05T19:31:16+00:00">
+								5 05UTC Enero 05UTC 2016 a las 7:31 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Es importante que te asegures que permites la ejecución de PHP como script dentro del HTML generado con DOMPDF. En el raíz de la clase tienes el fichero <strong>dompdf_config.inc.php</strong>. Busca ahí la constante <code>def("DOMPDF_ENABLE_PHP", false);</code> y cámbiala por <code>true</code> para que interprete el código PHP e incluya los números de página.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=323#respond" onclick="return addComment.moveForm( &quot;div-comment-323&quot;, &quot;323&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-326" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-326" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/b04f4d912daab323666a26e522074793?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/b04f4d912daab323666a26e522074793?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/b04f4d912daab323666a26e522074793?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/b04f4d912daab323666a26e522074793?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">michael</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-326">
+							<time datetime="2016-01-21T19:09:05+00:00">
+								21 21UTC Enero 21UTC 2016 a las 7:09 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>que tal amigo fijate que yo cree una archivo php para que me genere un reporte en pdf lo genera y todo pero al abrirlo me dice que es un archivo no admitido o esta dañado y adobe reader no lo abre ni otro lector de pdf revise el codigo minusiosamente y no logro solucionarlo en word y excel al generar si me funciona re bien pero con pdf no</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=326#respond" onclick="return addComment.moveForm( &quot;div-comment-326&quot;, &quot;326&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a michael">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-327" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-327" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-327">
+							<time datetime="2016-01-25T20:14:31+00:00">
+								25 25UTC Enero 25UTC 2016 a las 8:14 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Cuando un fichero generado con DOMPDF te arroja dicho error es porque no se ha creado correctamente. Te recomiendo que revises el HTML que generas pues probablemente sea incorrecto o arroje algún error en texto. Para ello desactiva la salida y haz un volcado en pantalla del HTML generado para poder depurarlo.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=327#respond" onclick="return addComment.moveForm( &quot;div-comment-327&quot;, &quot;327&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-328" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-328" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/1a8be2a97c1a4b1d558053b0be0fdc01?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/1a8be2a97c1a4b1d558053b0be0fdc01?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/1a8be2a97c1a4b1d558053b0be0fdc01?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/1a8be2a97c1a4b1d558053b0be0fdc01?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Eduardo</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-328">
+							<time datetime="2016-02-04T17:21:07+00:00">
+								4 04UTC Febrero 04UTC 2016 a las 5:21 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Amigo como recibo los datos traidos de php en dompdf…<br>
+normalmente lo muestro en pantalla con un echo<br>
+echo $this_persona[0][‘nombre’];<br>
+si pongo eso mismo asi<br>
+echo $this-&gt;_persona[0][“cedula”];<br>
+no me aparece nada sale vacio….</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=328#respond" onclick="return addComment.moveForm( &quot;div-comment-328&quot;, &quot;328&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Eduardo">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-329" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-329" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-329">
+							<time datetime="2016-02-04T18:35:39+00:00">
+								4 04UTC Febrero 04UTC 2016 a las 6:35 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>A ver. Con DOMPDF lo que tienes que generar primero una cadena que sea <strong>un documento HTML válido</strong>. Es ahí donde tienes que hacer el volcado de datos, en esa cadena. A DOMPDF le pasarás el HTML una vez ya formado previamente con todos los datos. No puedes hacer el echo dentro, por lo menos de una forma fácil, y no es aconsejable.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=329#respond" onclick="return addComment.moveForm( &quot;div-comment-329&quot;, &quot;329&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-331" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-331" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/addd2a0907fe7a2200232d1443e8f178?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/addd2a0907fe7a2200232d1443e8f178?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/addd2a0907fe7a2200232d1443e8f178?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/addd2a0907fe7a2200232d1443e8f178?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">aaron</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-331">
+							<time datetime="2016-02-10T22:22:54+00:00">
+								10 10UTC Febrero 10UTC 2016 a las 10:22 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Estoy realizando una aplicacion que genere un pdf , el problema es que solo me muestra un registro cuando la tabla tiene 3 registro, no he podido hacer que mande los 3 registros, sabras como se le puede hacer?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=331#respond" onclick="return addComment.moveForm( &quot;div-comment-331&quot;, &quot;331&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a aaron">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-332" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-332" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-332">
+							<time datetime="2016-02-10T22:47:13+00:00">
+								10 10UTC Febrero 10UTC 2016 a las 10:47 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>DOMPDF no te elimina registros de las tablas pues simplemente se limita a renderizar el HTML. Tiene toda la pinta de que el HTML que construyes es defectuoso y por lo tanto no puede generar correctamente el PDF. Te recomiendo que te asegures de que tu HTML no tiene errores y cumple el estandar XHTML.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=332#respond" onclick="return addComment.moveForm( &quot;div-comment-332&quot;, &quot;332&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-335" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-335" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/d6793a3ef0b1bfdd6d45cb64c8a01f01?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/d6793a3ef0b1bfdd6d45cb64c8a01f01?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/d6793a3ef0b1bfdd6d45cb64c8a01f01?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/d6793a3ef0b1bfdd6d45cb64c8a01f01?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Pablo</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-335">
+							<time datetime="2016-02-18T21:49:08+00:00">
+								18 18UTC Febrero 18UTC 2016 a las 9:49 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Buenas tardes amigo tengo un problema y es el siguiente tengo mi archivo .php y dentro de el tengo una variable que almacena todo el codigo html  $var=’html code’ todo fino pruebo este código html normal y sale perfecto como quiero pero cuando se lo paso al pdf para que lo genere lo genera de forma defectuosa es decir, un pedazo de mi html contiene lo siguiente q es donde esta dando la imperfección:</p>
+<p> &gt;&gt;<br>
+   &gt;&gt;<br>
+Este codigo como dije arriba funciona perfectamente en un archivo html pero cuando lo saco en pdf la imagen sale mal o no abarca el div completo que si por la mitad<br>
+Espero que me puedas ayudar. Saludos</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=335#respond" onclick="return addComment.moveForm( &quot;div-comment-335&quot;, &quot;335&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Pablo">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-336" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-336" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-336">
+							<time datetime="2016-02-23T16:41:03+00:00">
+								23 23UTC Febrero 23UTC 2016 a las 4:41 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Copia el código fuente que generas en HTML y compruebalo en el <a href="https://validator.w3.org/" target="_blank" rel="nofollow">validador HTML  de la W3C</a>. Parece que has cometido algún error de cierre en lo tags. También te recuerdo que no se lleva demasiado bien con el HTML5.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=336#respond" onclick="return addComment.moveForm( &quot;div-comment-336&quot;, &quot;336&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-337" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-337" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/74d2defc00fa3fc60c0c0f0e67c39e68?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/74d2defc00fa3fc60c0c0f0e67c39e68?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/74d2defc00fa3fc60c0c0f0e67c39e68?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/74d2defc00fa3fc60c0c0f0e67c39e68?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Armando</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-337">
+							<time datetime="2016-03-12T01:11:22+00:00">
+								12 12UTC Marzo 12UTC 2016 a las 1:11 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Buenas tardes, al tratar de descargar la librería me direcciona a la siguiente pagina <a href="https://github.com/dompdf/dompdf" rel="nofollow">https://github.com/dompdf/dompdf</a> la cual no encuentro el “dompdf_config.inc.php”, espero que me puedan ayudar.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=337#respond" onclick="return addComment.moveForm( &quot;div-comment-337&quot;, &quot;337&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Armando">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-338" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-338" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-338">
+							<time datetime="2016-03-12T17:45:43+00:00">
+								12 12UTC Marzo 12UTC 2016 a las 5:45 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Efectivamente están desarrollando una nueva versión 7.0 que aún está en beta. Puedes desde el <a href="https://github.com/dompdf/dompdf/releases" target="_blank" rel="nofollow">siguiente enlace</a> acceder al histórico de versiones y descargar la 6.2 que es la actualmente estable y encontrarás el fichero de configuración en el raíz del proyecto.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=338#respond" onclick="return addComment.moveForm( &quot;div-comment-338&quot;, &quot;338&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-351" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-351" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/62cc57b263215ebb5672bdbfeeaba867?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/62cc57b263215ebb5672bdbfeeaba867?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/62cc57b263215ebb5672bdbfeeaba867?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/62cc57b263215ebb5672bdbfeeaba867?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Jose da Casa</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-351">
+							<time datetime="2016-04-27T10:27:27+00:00">
+								27 27UTC Abril 27UTC 2016 a las 10:27 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola. Tengo un problema con los acentos. Cuando una palabra lo tiene se lo come.<br>
+Por ejemplo : “Cajón” me lo muestra como “Cajn”<br>
+He consultado en foros y manuales y no lo consigo solucionar. Puse como juego de carácteres en el charset de la cabecera UTF-8 para evitar problemas.<br>
+Utilicé en la llamada al html tanto utf8_encode como utf8_decode pero nada.</p>
+<p>Te pongo el código que he utilizado :<br>
+set_paper(‘A4’, ‘portrait’);<br>
+$dompdf-&gt;load_html(utf8_decode(“$html”));<br>
+$dompdf-&gt;render();<br>
+$dompdf-&gt;stream(‘catalogo.pdf’);<br>
+?&gt;</p>
+<p>Muchas gracias de antemano</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=351#respond" onclick="return addComment.moveForm( &quot;div-comment-351&quot;, &quot;351&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Jose da Casa">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-353" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-353" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-353">
+							<time datetime="2016-04-29T15:21:50+00:00">
+								29 29UTC Abril 29UTC 2016 a las 3:21 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Es una buena opción que utilices UTF8. Sin embargo no te recomiendo que uses las funciones de <code>utf8_encode</code>, <code>utf8_decode</code> de no ser estrictamente necesario. Asegúrate primero, y por este orden, de cual es la codificación de:</p>
+<ul>
+<li>El fichero .php. Ten cuidado no esté en Latin-1, Windows-1252-1, etc. Si utilizas un buen editar busca la opción de “Convertir a UTF-8”.</li>
+<li>El origen de datos de la información. Si es una BDD asegúrate de que en la conexión utilizas la codificación correcta. Si lees un fichero o un include, lo mismo que en el punto anterior. Asegúrate de la codificación del fichero.</li>
+</ul>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=353#respond" onclick="return addComment.moveForm( &quot;div-comment-353&quot;, &quot;353&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-354" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-354" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/99b4eeab9c6f346e32406a4a4a96039f?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/99b4eeab9c6f346e32406a4a4a96039f?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/99b4eeab9c6f346e32406a4a4a96039f?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/99b4eeab9c6f346e32406a4a4a96039f?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">marcelov</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-354">
+							<time datetime="2016-05-03T14:16:08+00:00">
+								3 03UTC Mayo 03UTC 2016 a las 2:16 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Buenos dias, tengo un problema cuando el codigo es puramente html no tengo problema pero cuando incluyo PHP me da errores<br>
+esta es la linea que ingreso<br>
+&lt;?php<br>
+echo "<strong>“.”Al “.”&nbsp;“.$jerarquia2.”&nbsp;&nbsp;“.”(L.P N:”.$legajo2.”&nbsp;“.”) Dn.”.$apellido2.”</strong>“;<br>
+?&gt; o tambien</p>
+<p>&lt;?php<br>
+print "”<br>
+?&gt;</p>
+<p>este es el error que tira</p>
+<p>( ! ) Parse error: syntax error, unexpected T_STRING in dompdf\include\dompdf.cls.php(443) : eval()’d code on line 10</p>
+<p>ya verifique y el php esta en true no se que puede ser. desde ya muchas gracias</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=354#respond" onclick="return addComment.moveForm( &quot;div-comment-354&quot;, &quot;354&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a marcelov">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-357" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-357" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-357">
+							<time datetime="2016-05-06T17:31:36+00:00">
+								6 06UTC Mayo 06UTC 2016 a las 5:31 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Si estás ingresando esas dobles comillas es un error de sintaxis <code>&lt;?php print "” ?&gt;</code> Las comillas deben de ser del mismo tipo.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=357#respond" onclick="return addComment.moveForm( &quot;div-comment-357&quot;, &quot;357&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-358" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-358" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/db1e0a3750e0399df3eeee808187d9b4?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/db1e0a3750e0399df3eeee808187d9b4?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/db1e0a3750e0399df3eeee808187d9b4?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/db1e0a3750e0399df3eeee808187d9b4?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="http://none/" rel="external nofollow" class="url">Carlos</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-358">
+							<time datetime="2016-05-19T20:46:19+00:00">
+								19 19UTC Mayo 19UTC 2016 a las 8:46 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Gracias por la información :D, me ha servido bastante</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=358#respond" onclick="return addComment.moveForm( &quot;div-comment-358&quot;, &quot;358&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Carlos">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-359" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-359" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-359">
+							<time datetime="2016-05-22T13:32:16+00:00">
+								22 22UTC Mayo 22UTC 2016 a las 1:32 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Me alegro. Un saludo. <img draggable="false" class="emoji" alt="😉" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/1f609.svg"></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=359#respond" onclick="return addComment.moveForm( &quot;div-comment-359&quot;, &quot;359&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-379" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-379" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/aa311ae7c69f8b2f8d104f1285ff9023?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/aa311ae7c69f8b2f8d104f1285ff9023?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/aa311ae7c69f8b2f8d104f1285ff9023?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/aa311ae7c69f8b2f8d104f1285ff9023?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="http://www.produccion.gob.bo/" rel="external nofollow" class="url">Wilfredo Mendoza</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-379">
+							<time datetime="2016-09-01T20:30:29+00:00">
+								1 01UTC Septiembre 01UTC 2016 a las 8:30 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Muchas gracias Oscar, me solucionó un problema muy crítico, me sirvió de mucho lo estoy implementando bajo ubuntu server 14.04, php 5, estoy probando con msyql, recomiendo su uso.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=379#respond" onclick="return addComment.moveForm( &quot;div-comment-379&quot;, &quot;379&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Wilfredo Mendoza">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-382" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-382" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/410fb7a200ef72155b29df8963142a72?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/410fb7a200ef72155b29df8963142a72?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/410fb7a200ef72155b29df8963142a72?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/410fb7a200ef72155b29df8963142a72?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="http://www.infovinos.es/" rel="external nofollow" class="url">Juan Manuel García</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-382">
+							<time datetime="2016-09-14T14:11:51+00:00">
+								14 14UTC Septiembre 14UTC 2016 a las 2:11 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola:<br>
+Se puede insertar un archivo PDF como plantilla en el PDF que vamos a generar, y que nos servirá de fondo sobre el que incorporaremos los datos de una consulta …. que código se utiliza para ello?…… Saludos</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=382#respond" onclick="return addComment.moveForm( &quot;div-comment-382&quot;, &quot;382&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Juan Manuel García">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-383" class="comment byuser comment-author-oscar bypostauthor even depth-2">
+			<article id="div-comment-383" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-383">
+							<time datetime="2016-09-14T20:39:41+00:00">
+								14 14UTC Septiembre 14UTC 2016 a las 8:39 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Con la librería DOMPDF no se puede utilizar como tú dices una plantilla PDF como base. Directamente tienes que utilizar HTML y generar una plantilla con HTML. Si te interesa cargar y modificar una plantilla PDF deberás de utilizar otro desarrollo como Zend/PDF. <a href="https://www.sitepoint.com/generating-invoices-with-zend_pdf/" rel="nofollow">https://www.sitepoint.com/generating-invoices-with-zend_pdf/</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=383#respond" onclick="return addComment.moveForm( &quot;div-comment-383&quot;, &quot;383&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-384" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-384" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/27a4dd433ebeb2381da91bc14cf2ad0c?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/27a4dd433ebeb2381da91bc14cf2ad0c?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/27a4dd433ebeb2381da91bc14cf2ad0c?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/27a4dd433ebeb2381da91bc14cf2ad0c?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Ivan Vargas</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-384">
+							<time datetime="2016-09-15T00:37:10+00:00">
+								15 15UTC Septiembre 15UTC 2016 a las 12:37 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola estimado Oscar:<br>
+Termine de crear mi documento pdf pero lo que deseo es enviarlo directamente a la impresora sin la previsualizacion que aparece en Adobe, con que instruccion de dompdf lo podria hacer? .<br>
+Gracias por responder.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=384#respond" onclick="return addComment.moveForm( &quot;div-comment-384&quot;, &quot;384&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Ivan Vargas">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-385" class="comment byuser comment-author-oscar bypostauthor even depth-2">
+			<article id="div-comment-385" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-385">
+							<time datetime="2016-09-15T15:50:31+00:00">
+								15 15UTC Septiembre 15UTC 2016 a las 3:50 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Pues no puedes enviar desde PHP un trabajo a la impresora directamente. El trabajo de DOMPDF termina en cuanto genera el documento. El trabajo de imprimirlo ya es cuestión del navegador. Además como el PDF se abre en un componente embebido y distinto al navegador no creo que puedas imprimirlo directamente…</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=385#respond" onclick="return addComment.moveForm( &quot;div-comment-385&quot;, &quot;385&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-386" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-386" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/e92f46c58e77b2629ca2a4939401f472?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/e92f46c58e77b2629ca2a4939401f472?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/e92f46c58e77b2629ca2a4939401f472?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/e92f46c58e77b2629ca2a4939401f472?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="http://www.raulwebnet.com/" rel="external nofollow" class="url">raul rodriguez</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-386">
+							<time datetime="2016-09-19T02:23:05+00:00">
+								19 19UTC Septiembre 19UTC 2016 a las 2:23 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>un saludo deseo ayuda tengo este codigo para mostrar una imagen pero es de una variable </p>
+<p>$html .= ‘ &lt;img src="” width=”95″ height=”95″/&gt;’;</p>
+<p>como resolveria esto la imagen incluir en img con DOMPDF viene de una tabla donde </p>
+<p>$xqr=”../foto/fig.png”</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=386#respond" onclick="return addComment.moveForm( &quot;div-comment-386&quot;, &quot;386&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a raul rodriguez">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-388" class="comment byuser comment-author-oscar bypostauthor even depth-2">
+			<article id="div-comment-388" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-388">
+							<time datetime="2016-09-19T08:19:41+00:00">
+								19 19UTC Septiembre 19UTC 2016 a las 8:19 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>&lt;code&gt;$html .= ‘&lt;img src=’ . $xqr . ‘ width=”95″ height=”95″/&gt;’;&lt;/code&gt;</p>
+<p>Te recomiendo que en altura y anchura de la imagen utilizes sólo una dimensión (anchura o altura) y dado que DOMPDF está orientado a medio físico utilices mm como unidad de medida.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=388#respond" onclick="return addComment.moveForm( &quot;div-comment-388&quot;, &quot;388&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-398" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-398" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/eb1711737652b56774304df90ef12dca?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/eb1711737652b56774304df90ef12dca?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/eb1711737652b56774304df90ef12dca?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/eb1711737652b56774304df90ef12dca?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Danisys</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-398">
+							<time datetime="2017-01-12T05:42:08+00:00">
+								12 12UTC Enero 12UTC 2017 a las 5:42 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola estimado, espero me puedas ayudar con este mensaje que me sale, al intentar cargar la pagina que me genera los pdfs en base a un xml: Fatal error: Uncaught exception ‘Dompdf\Exception’ with message ‘Min/max width is undefined for table rows’ in C:\xampp\htdocs\pdf\dompdf\src\FrameReflower\TableRow.php:66 Stack trace: #0 C:\xampp\htdocs\pdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(806): Dompdf\FrameReflower\TableRow-&gt;get_min_max_width() #1 C:\xampp\htdocs\pdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(205): Dompdf\FrameDecorator\AbstractFrameDecorator-&gt;get_min_max_width() #2</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=398#respond" onclick="return addComment.moveForm( &quot;div-comment-398&quot;, &quot;398&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Danisys">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-399" class="comment byuser comment-author-oscar bypostauthor even depth-2 parent">
+			<article id="div-comment-399" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-399">
+							<time datetime="2017-01-12T09:57:48+00:00">
+								12 12UTC Enero 12UTC 2017 a las 9:57 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Aparentemente tienes un problema con la maquetación de alguna tabla en HTML. Ya sabes que DOM/PDF es muy estricto. Sin embargo como pueden ser muchos factores te recomiendo que busques en Google más casos similares al tuyo. Seguro que en el enclace que te pongo a continuación encuentras alguien que le sucede lo mismo que a tí.</p>
+<p><a href="https://www.google.es/?gfe_rd=cr&amp;ei=30F3WIvNFuXU8gevvrPwBQ#q=Dompdf%5CException+Min%2Fmax+width+is+undefined+for+table+rows" rel="nofollow">https://www.google.es/?gfe_rd=cr&amp;ei=30F3WIvNFuXU8gevvrPwBQ#q=Dompdf%5CException+Min%2Fmax+width+is+undefined+for+table+rows</a></p>
+<p>La mejor manera de aprender es buscando los errores en Google. <img draggable="false" class="emoji" alt="😉" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/1f609.svg"></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=399#respond" onclick="return addComment.moveForm( &quot;div-comment-399&quot;, &quot;399&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-405" class="comment odd alt depth-3">
+			<article id="div-comment-405" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/eb1711737652b56774304df90ef12dca?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/eb1711737652b56774304df90ef12dca?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/eb1711737652b56774304df90ef12dca?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/eb1711737652b56774304df90ef12dca?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Danisys</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-405">
+							<time datetime="2017-01-12T21:46:00+00:00">
+								12 12UTC Enero 12UTC 2017 a las 9:46 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>ok, gracias Oscar, si estuve buscando en la web pero no habia un error parecido, había muchos otros., ahora reviso el enlace.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=405#respond" onclick="return addComment.moveForm( &quot;div-comment-405&quot;, &quot;405&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Danisys">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-406" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-406" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/630276148e6855a44303727e12b636e3?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/630276148e6855a44303727e12b636e3?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/630276148e6855a44303727e12b636e3?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/630276148e6855a44303727e12b636e3?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">gorge</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-406">
+							<time datetime="2017-01-18T00:48:21+00:00">
+								18 18UTC Enero 18UTC 2017 a las 12:48 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hola oscar una pregunta quiero usar el dompdf para convertir una pag html en pdf, si le paso el URL con load_html funciona bien , pero si trato de usar el metodo load_html_file me da error este<br>
+Fatal error: Uncaught exception ‘DOMPDF_Exception’ with message ‘Permission denied on archivo.php The file could not be found under the directory specified by DOMPDF_CHROOT.’ in C:\xampp\htdocs\Pasantias pdf\dompdf-0.6.0\include\dompdf.cls.php:491 Stack trace: #0 ruta/Cdompdf.php(13): DOMPDF-&gt;load_html_file(‘archivo.php’) #1 {main} thrown in ruta\…\dompdf-0.6.0\include\dompdf.cls.php on line 491</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=406#respond" onclick="return addComment.moveForm( &quot;div-comment-406&quot;, &quot;406&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a gorge">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-407" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-407" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-407">
+							<time datetime="2017-01-18T09:38:52+00:00">
+								18 18UTC Enero 18UTC 2017 a las 9:38 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>El error parece muy claro. La ruta que le indicas no es correcta y no encuentra el fichero.  <strong>‘Permission denied on archivo.php The file could not be found …’</strong> </p>
+<p><em>C:\xampp\htdocs\Pasantias pdf\dompdf-0.6.0\include\dompdf.cls.php</em> Lo primero que veo es que tienes un espacio en la ruta <em>Pasantias pdf</em> y suele ser mala idea trabajar en web e incluir espacios en las rutas. En programación y web es mejor utilizar guiones (-) o caracteres (_) subrayados para evitar el uso de espacios. Por otro lado intenta evitar siempre rutas absolutas. No se si es tu caso, pero siempre mejor utilizar rutas relativas. Salu2.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=407#respond" onclick="return addComment.moveForm( &quot;div-comment-407&quot;, &quot;407&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-409" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-409" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/5efa5e31d6e5960216dba7aa04f110e4?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/5efa5e31d6e5960216dba7aa04f110e4?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/5efa5e31d6e5960216dba7aa04f110e4?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/5efa5e31d6e5960216dba7aa04f110e4?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Rafa</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-409">
+							<time datetime="2017-01-23T22:28:28+00:00">
+								23 23UTC Enero 23UTC 2017 a las 10:28 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Que tal oscar, buena investigacion.<br>
+Me gustaria implementar dompfd en una tabla y vaciar los datos desde una consulta hacia mi base de datos, no me sale al realizarlo.<br>
+Estoy utilizando este codigo.</p>
+<p>		Listado de maquinas!!</p>
+<p>		noMaquina<br>
+		marca<br>
+		tipo<br>
+		capacidad<br>
+		FechaLegada</p>
+<p>set_paper(“A4”, “portrait”);</p>
+<p># Cargamos el contenido HTML.<br>
+$mipdf -&gt;load_html(utf8_decode(‘http/localhost/CustomPak/dompdf/index.php’));</p>
+<p># Renderizamos el documento PDF.<br>
+$mipdf -&gt;render();</p>
+<p># Enviamos el fichero PDF al navegador.<br>
+$mipdf -&gt;output();<br>
+?&gt;</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=409#respond" onclick="return addComment.moveForm( &quot;div-comment-409&quot;, &quot;409&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Rafa">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-411" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-411" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-411">
+							<time datetime="2017-01-30T16:13:20+00:00">
+								30 30UTC Enero 30UTC 2017 a las 4:13 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Es más que probable que no te funcione porque el HTML que le envías no esté bien formado. Asegúrate primero que la URL esté bien. Además tienes errores en la URL. Tienes “http/localhost/CustomPak/dompdf/index.php”. No sólo tienes errores en el protocolo… Asegúrate que el servidor es el correcto, porque intentará leer esa ruta en el propio servidor.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=411#respond" onclick="return addComment.moveForm( &quot;div-comment-411&quot;, &quot;411&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-414" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-414" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/87e1ecb259bfe6813cc6a1421c6101b7?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/87e1ecb259bfe6813cc6a1421c6101b7?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/87e1ecb259bfe6813cc6a1421c6101b7?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/87e1ecb259bfe6813cc6a1421c6101b7?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Juan José</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-414">
+							<time datetime="2017-02-14T22:57:40+00:00">
+								14 14UTC Febrero 14UTC 2017 a las 10:57 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hola Oscar Gascón buena tarde, he estado usando dompdf y me ha resultado fácil, pero ahora tengo un problema, estoy tratando de hacer reportes muy grandes o pesados y me sale este mensaje “Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 32 bytes) in”, mi pregunta es ¿el tamaño es problema del servidor que uso o puedo configurar algún archivo del dompdf? te agradeceria me pudieras ayudar. muchas gracias y saludos</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=414#respond" onclick="return addComment.moveForm( &quot;div-comment-414&quot;, &quot;414&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Juan José">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-415" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-415" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-415">
+							<time datetime="2017-02-15T10:25:41+00:00">
+								15 15UTC Febrero 15UTC 2017 a las 10:25 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>El problema es que el proceso está dejando sin memoria tu servidor. Consulta en el panel de control  de tu servidor si puedes aumentar ese límite, por ejemplo a 128MB. Sino lo puedes introducir sólo en el momento de generar los PDF, modificando el límite de memoria. Te dejo un enlace de cómo hacer esto último. </p>
+<p><a href="https://davidwalsh.name/increase-php-memory-limit-ini_set" rel="nofollow">https://davidwalsh.name/increase-php-memory-limit-ini_set</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=415#respond" onclick="return addComment.moveForm( &quot;div-comment-415&quot;, &quot;415&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-416" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-416" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f2db65f865736dbeef18bb63d590cfd7?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f2db65f865736dbeef18bb63d590cfd7?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f2db65f865736dbeef18bb63d590cfd7?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f2db65f865736dbeef18bb63d590cfd7?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">carlos</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-416">
+							<time datetime="2017-02-24T18:02:31+00:00">
+								24 24UTC Febrero 24UTC 2017 a las 6:02 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hola! tengo la siguiente situación: </p>
+<p>en una computadora que uso para desarrollo funciona correctamente el reporte pero al pasarlo a otra computadora se sigue ejecutando el reporte pero lo único que no aparece es el número de página.</p>
+<p>ambas computadoras tienen def(“DOMPDF_ENABLE_PHP”, true);</p>
+<p>me podrías orientar sobre qué puede estar pasando ?</p>
+<p>gracias.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=416#respond" onclick="return addComment.moveForm( &quot;div-comment-416&quot;, &quot;416&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a carlos">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-419" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-419" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-419">
+							<time datetime="2017-02-25T10:01:41+00:00">
+								25 25UTC Febrero 25UTC 2017 a las 10:01 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Pues te recomendaría que te aseguraras de que realmente sea así y en el momento que invoques la clase DOMpdf, a continuación en tu código hagas un</p>
+<p>var_dump(DOMPDF_ENABLE_PHP);<br>
+die;</p>
+<p>Y realmente te asegures que realmente se está aplicando dicha configuración. Lo siguiente asegurarse que es la misma versión de PHP, de DOMPdf, etc. Espero que lo encuentres pronto.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=419#respond" onclick="return addComment.moveForm( &quot;div-comment-419&quot;, &quot;419&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-420" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-420" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/a10c6806705ca67fb07f78756343699e?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/a10c6806705ca67fb07f78756343699e?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/a10c6806705ca67fb07f78756343699e?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/a10c6806705ca67fb07f78756343699e?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Miguel Angel</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-420">
+							<time datetime="2017-02-27T17:52:36+00:00">
+								27 27UTC Febrero 27UTC 2017 a las 5:52 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Intente hacerlo con HTML2PDF, solo que no funciono me saca paginas en blanco y algunos rectángulos. Voy a tratar de hacerlo con con dompdf, siguiendo este artículo. Soló una cuestión funciona par probarlo primero en un localhost de windows y hay un sitio oficial donde bajar la librería dompdf ?</p>
+<p>Saludos desde México</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=420#respond" onclick="return addComment.moveForm( &quot;div-comment-420&quot;, &quot;420&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Miguel Angel">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-422" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-422" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-422">
+							<time datetime="2017-03-01T12:34:24+00:00">
+								1 01UTC Marzo 01UTC 2017 a las 12:34 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Este es el repositorio oficial.</p>
+<p><a href="https://github.com/dompdf/dompdf" rel="nofollow">https://github.com/dompdf/dompdf</a></p>
+<p>Un saludo.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=422#respond" onclick="return addComment.moveForm( &quot;div-comment-422&quot;, &quot;422&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-424" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-424" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/7b0437d0fc0b6905819fec9198f17f05?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/7b0437d0fc0b6905819fec9198f17f05?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/7b0437d0fc0b6905819fec9198f17f05?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/7b0437d0fc0b6905819fec9198f17f05?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn">Gabriel</b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-424">
+							<time datetime="2017-03-30T00:23:43+00:00">
+								30 30UTC Marzo 30UTC 2017 a las 12:23 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Buen dia Oscar, me podrias ayudar con esto…<br>
+Estoy haciendo un reporte con dompdf y todo esta bien ya me funciona, pero tengo problemas con los margenes, los datos los traigo de una base de datos y me los muestra en una tabla  pero cuando son muchos esa tabla crece y se pasa a una segunda pagina, pero quiero que esa segunda  pagina tenga un margen arriba porque la tabla en la segunda pagina me queda muy pegada a la parte superior, gracias…</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=424#respond" onclick="return addComment.moveForm( &quot;div-comment-424&quot;, &quot;424&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Gabriel">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-425" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-425" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-425">
+							<time datetime="2017-03-30T14:01:30+00:00">
+								30 30UTC Marzo 30UTC 2017 a las 2:01 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Lo que tendrás que hacer es calcular manualmente cuantas filas de tabla caben en una página y cerrar la tabla para cada página. Luego por en el HTML introduces algún elemento que indique que es una página nueva y le pones una propiedad CSS que “cree una nueva página”. Recuerda que CSS también admite como soporte “print”. En la nueva página simplemente comienza otra vez la tabla y repites las operación tantas veces como haga falta.</p>
+<p>Si necesitas ayuda con el CSS:</p>
+<p><a href="http://stackoverflow.com/questions/3262318/how-does-page-break-before-css-property-work" rel="nofollow">http://stackoverflow.com/questions/3262318/how-does-page-break-before-css-property-work</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=425#respond" onclick="return addComment.moveForm( &quot;div-comment-425&quot;, &quot;425&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-426" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-426" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/d0692c0043cbffb6fe5f6150b1e7d349?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/d0692c0043cbffb6fe5f6150b1e7d349?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/d0692c0043cbffb6fe5f6150b1e7d349?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/d0692c0043cbffb6fe5f6150b1e7d349?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="http://www.ecodeli.com/" rel="external nofollow" class="url">Rafael Pérez Nazario</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-426">
+							<time datetime="2017-04-26T23:04:10+00:00">
+								26 26UTC Abril 26UTC 2017 a las 11:04 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Buenas tardes uso la libreria dompdf pero quiero agregar graficas estoy usando la libreria de Chart.js pero no me pinta la gráfica sabes a que se debe o que puedo implementar para visualizarlo</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=426#respond" onclick="return addComment.moveForm( &quot;div-comment-426&quot;, &quot;426&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Rafael Pérez Nazario">Responder</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-427" class="comment byuser comment-author-oscar bypostauthor odd alt depth-2">
+			<article id="div-comment-427" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;d=mm&amp;r=g 2x" class="lazy lazy-hidden avatar avatar-32 photo" height="32" width="32"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=32&amp;#038;d=mm&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/f4476bfddce8cab9b81995b9ba1f5f42?s=64&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /&gt;</noscript>						<b class="fn"><a href="https://oscargascon.es/" rel="external nofollow" class="url">Oscar Gascón Arjol</a></b> <span class="says">dice:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#comment-427">
+							<time datetime="2017-04-27T09:59:27+00:00">
+								27 27UTC Abril 27UTC 2017 a las 9:59 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Todo pasa por que conviertas previamente el canvas que genera chart.js a imagen (png). Una vez has manipulado el canvas y tienes la imagen podrás tratar la imagen como un elemento más en el HTML.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/?replytocom=427#respond" onclick="return addComment.moveForm( &quot;div-comment-427&quot;, &quot;427&quot;, &quot;respond&quot;, &quot;2360&quot; )" aria-label="Responder a Oscar Gascón Arjol">Responder</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+    </ol>
+
+      
+  
+  	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><i class="icon-edit-alt"></i>Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#respond" style="display:none;">Cancelar respuesta</a></small></h3>			<form action="https://oscargascon.es/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Tu dirección de correo electrónico no será publicada.</span> Los campos obligatorios están marcados con <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comentario</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required"></p>
+<p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required"></p>
+<p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario"> <input type="hidden" name="comment_post_ID" value="2360" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="792f9cc544"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1494918455837"></form>
+			</div><!-- #respond -->
+	    <div class="triangle-down"></div>
+</section>
+    </article>
+            </main><!-- /.main -->
+                            <aside class="sidebar" role="complementary">
+                    <section class="widget search-2 widget_search"><div class="triangle-up"></div><form role="search" method="get" class="search-form form-inline" action="https://oscargascon.es/">
+    <label class="sr-only">Buscar:</label>
+    <div class="input-group">
+        <input type="search" value="" name="s" class="search-field form-control" required="">
+    </div>
+    <button><i class="icon-search"></i></button>
+</form>
+<div class="triangle-down"></div></section><section class="widget yarpp_widget-2 widget_yarpp_widget"><div class="triangle-up"></div><h3><i class="icon-resize-small"></i>Relacionados</h3><div class="yarpp-related-widget">
+<ol><li><a href="https://oscargascon.es/convertir-e-imprimir-multiples-imagenes-a-un-pdf-desde-la-consola-de-linux/" rel="bookmark">Convertir e imprimir múltiples imágenes a un PDF desde la consola de Linux</a></li><li><a href="https://oscargascon.es/utilizar-sprites-en-lugar-de-imagenes-para-acelerar-la-carga-de-un-site/" rel="bookmark">Utilizar sprites en lugar de imágenes para acelerar la carga de un site</a></li><li><a href="https://oscargascon.es/utilizar-tipos-de-iconos-o-webfonts-en-lugar-de-imagenes-con-html-y-css-font-awesome-efectos-3d/" rel="bookmark">Utilizar tipos de iconos o webfonts en lugar de imágenes con HTML y CSS: Font Awesome y efectos 3D</a></li><li><a href="https://oscargascon.es/cambiar-la-apariencia-de-los-radiobutton-y-checkbox-de-los-formularios-html-por-medio-de-css-sprites-y-fontawesome/" rel="bookmark">Cambiar la apariencia de los radiobutton y checkbox de los formularios HTML por medio de CSS: sprites y FontAwesome</a></li><li><a href="https://oscargascon.es/ejemplo-de-uso-de-zend-navigation-con-skeleton-application-y-zend-route/" rel="bookmark">Ejemplo de uso de Zend Navigation con Skeleton Application y Zend Route</a></li></ol>
+</div>
+<div class="triangle-down"></div></section>		<section class="widget recent-posts-2 widget_recent_entries"><div class="triangle-up"></div>		<h3><i class="icon-clock"></i>Lo último</h3>		<ul>
+					<li>
+				<a href="https://oscargascon.es/volcar-base-datos-con-php/">Volcar Base de Datos MySQL con PHP</a>
+						</li>
+					<li>
+				<a href="https://oscargascon.es/wp-cli-git-y-composer-con-wordpress-guia-de-uso/">WP-CLI, Git y Composer con WordPress: guía de uso</a>
+						</li>
+					<li>
+				<a href="https://oscargascon.es/breve-resumen-de-la-meetup-de-zaragoza-wp-sobre-wpo/">Breve resumen de la Meetup de Zaragoza WP sobre WPO</a>
+						</li>
+					<li>
+				<a href="https://oscargascon.es/balance-del-blog-en-2015/">Balance del Blog en 2015</a>
+						</li>
+					<li>
+				<a href="https://oscargascon.es/meetup-wpo-para-wordpress/">Meetup WPO para WordPress</a>
+						</li>
+				</ul>
+		<div class="triangle-down"></div></section>		<section class="widget categories-2 widget_categories"><div class="triangle-up"></div><h3><i class="icon-list"></i>Categorías</h3>		<ul>
+	<li class="cat-item cat-item-6"><a href="https://oscargascon.es/diseno-web/">Diseño web</a> (5)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://oscargascon.es/html-css/">HTML y CSS</a> (7)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://oscargascon.es/javascript-jquery/">JavaScript y jQuery</a> (5)
+</li>
+	<li class="cat-item cat-item-12"><a href="https://oscargascon.es/linux/">Linux</a> (16)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://oscargascon.es/mysql/">MySQL</a> (4)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://oscargascon.es/php/">PHP</a> (10)
+</li>
+	<li class="cat-item cat-item-11"><a href="https://oscargascon.es/seo-marketing-online/">SEO y Marketing Online</a> (2)
+</li>
+	<li class="cat-item cat-item-2"><a href="https://oscargascon.es/varios/">Varios</a> (7)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://oscargascon.es/web-performance-optimization/">Web Performance Optimization</a> (8)
+</li>
+	<li class="cat-item cat-item-24"><a href="https://oscargascon.es/wordpress/">WordPress</a> (9)
+</li>
+		</ul>
+<div class="triangle-down"></div></section>                </aside><!-- /.sidebar -->
+                    </div><!-- /.content -->
+    </div><!-- /.wrap -->
+
+    <footer class="content-info" role="contentinfo">  
+    <div class="triangle-up"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4><i class="icon-mail"></i> Contacto</h4>
+                    <aside id="text-2" class="widget widget_text">			<div class="textwidget"><div role="form" class="wpcf7" id="wpcf7-f3317-o1" lang="es-ES" dir="ltr">
+<div class="screen-reader-response"></div>
+<form action="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#wpcf7-f3317-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="3317">
+<input type="hidden" name="_wpcf7_version" value="4.7">
+<input type="hidden" name="_wpcf7_locale" value="es_ES">
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3317-o1">
+<input type="hidden" name="_wpnonce" value="620240eaf9">
+</div>
+<p>Nombre <br>
+    </p><div class="form-group your-name"><input class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" name="your-name" type="text" value="" aria-invalid="false" aria-required="true" required=""></div> <p></p>
+
+<p>Email<br>
+    </p><div class="form-group your-email"><input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" name="your-email" type="email" value="" aria-invalid="false" aria-required="true" required=""></div> <p></p>
+
+<p>Mensaje<br>
+    </p><div class="form-group your-message"><textarea class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control" name="your-message" rows="4" aria-invalid="false" aria-required="true" required=""></textarea></div> <p></p>
+
+<p></p><div class="form-group"><div><input class="wpcf7-form-control wpcf7-submit btn btn-primary" type="submit" value="Enviar"><span class="ajax-loader"></span></div></div><p></p><div class="wpcf7-response-output wpcf7-display-none alert"></div></form></div></div>
+		</aside>            </div>
+            <div class="col-sm-6 col-md-4">
+                <h4><i class="icon-location"></i> Dirección</h4>
+                <p>Paseo de Calanda<br>
+                    50.010 Zaragoza (ESPAÑA)</p>
+                <iframe src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/embed.html" width="100%" height="385"></iframe>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <h4><i class="icon-twitter"></i> Últimos tweets</h4>
+                <aside id="tl_twitter-2" class="widget tl_twitter">&nbsp;
+		<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="position: static; visibility: visible; display: inline-block; width: 520px; height: 385px; padding: 0px; border: none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; min-height: 200px;" data-widget-id="570204945614643200" title="Twitter Timeline" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/saved_resource.html"></iframe>
+
+		</aside>
+		            </div>
+        </div>
+        <section class="text-center copy">
+            <p>
+                © 2017 Web Design &amp; Theme Developed by<br>
+                <img src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/logo_oscargascon.png" alt="Oscar Gascón"><br>
+                Imágenes de cabecera propiedad de la <a href="http://www.nasa.gov/" target="_blank">NASA</a>.
+            </p>
+        </section>
+        <nav class="legal-navigation">
+            <ul class="text-center list-inline">
+                <li><a href="https://oscargascon.es/politica-de-cookies/">Política de Cookies</a></li>
+                <li><a href="https://oscargascon.es/aviso-legal/">Aviso Legal</a></li>
+            </ul>
+        </nav>
+        <section class="social text-center">
+            <a href="http://twitter.com/oscargascon" target="_blank">
+                <span class="icon-social twitter">
+                    <i class="icon-twitter"></i>
+                </span>
+            </a>
+            <a href="https://plus.google.com/+OscarGasconArjol/posts" target="_blank">
+                <span class="icon-social gplus">
+                    <i class="icon-gplus"></i>
+                </span>
+            </a>
+            <a href="http://es.linkedin.com/in/oscargascon/" target="_blank">
+                <span class="icon-social linkedin">
+                    <i class="icon-linkedin"></i>
+                </span>
+            </a>
+                        <a href="https://www.facebook.com/oscar.gascon.12" target="_blank">
+                <span class="icon-social facebook">
+                    <i class="icon-facebook"></i>
+                </span>
+            </a>
+        </section>
+    </div>
+</footer>
+                <script type="application/ld+json">{"@context":"http:\/\/schema.org\/","sameAs":["https:\/\/twitter.com\/oscargascon","https:\/\/plus.google.com\/+OscarGasconArjol\/posts","http:\/\/es.linkedin.com\/in\/oscargascon\/","https:\/\/www.facebook.com\/oscar.gascon.12"],"@type":"Article","url":"https:\/\/oscargascon.es\/uso-de-dompdf-para-generar-pdf-con-php-html-y-css\/","author":{"@type":"Person","name":"Oscar Gasc\u00f3n Arjol"},"headline":"Uso de DOMPDF para generar PDF con PHP, HTML y CSS","datePublished":"2014-09-14 11:45:28","image":"https:\/\/s3-eu-west-1.amazonaws.com\/static.oscargascon.es\/wp-content\/media\/massive_stars.jpg","ArticleSection":"HTML y CSS","Publisher":"Oscar Gasc\u00f3n Arjol"}</script>
+
+    <div id="cookie-law-info-bar" style="display: none; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: inherit; bottom: 0px; border-top: 4px solid rgb(51, 122, 183); position: fixed;"><span><p><span>Este sitio web utiliza cookies propias para que usted tenga la mejor experiencia de usuario, así como cookies de terceros como análisis del comportamiento de usuarios. Pinche el enlace para leer nuestra   <a href="https://oscargascon.es/politica-de-cookies" id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="color: rgb(68, 68, 68);">política de cookies</a>.</span></p>
+<a href="https://oscargascon.es/uso-de-dompdf-para-generar-pdf-con-php-html-y-css/#" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button" style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);">Aceptar</a> </span></div><div id="cookie-law-info-again" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); position: fixed; font-family: inherit; border-top: 1px solid rgb(51, 122, 183); border-right: 1px solid rgb(51, 122, 183); border-bottom: none; border-left: 1px solid rgb(51, 122, 183); border-image: initial; bottom: 0px; right: 100px; display: block;"><span id="cookie_hdr_showagain">Política de privacidad y cookies</span></div>		
+		<script type="text/javascript">
+			//<![CDATA[
+			jQuery(document).ready(function() {
+				cli_show_cookiebar({
+					settings: '{"animate_speed_hide":"500","animate_speed_show":"500","background":"#ffffff","border":"#337ab7","border_on":true,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":true,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":true,"scroll_close_reload":false,"showagain_tab":true,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000000","show_once_yn":true,"show_once":"10000"}'
+				});
+			});
+			//]]>
+		</script>
+		
+		<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/form.js.descarga"></script>
+<link rel="stylesheet" id="yarppRelatedCss-css" href="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/related.css" type="text/css" media="all">
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/comment-reply.min.js.descarga"></script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/scripts.min.js.descarga"></script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/jquery.form.min.js.descarga"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"recaptcha":{"messages":{"empty":"Por favor, prueba que no eres un robot."}},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/scripts.js.descarga"></script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/scripts.min.js(1).descarga"></script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/wp-syntax.js.descarga"></script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/bj-lazy-load.min.js.descarga"></script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/wp-embed.min.js.descarga"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var tl_twitter_localize = {"style_twitter_css":"https:\/\/oscargascon.es\/wp-content\/plugins\/twitter-widget-with-styling\/css\/style_twitter.css"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/style_twitter.js.descarga"></script>
+    <script>
+                (function (b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l;
+                b[l] || (b[l] =
+                        function () {
+                            (b[l].q = b[l].q || []).push(arguments)
+                        });
+                b[l].l = +new Date;
+                e = o.createElement(i);
+                r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+            ga('create', 'UA-37942007-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+
+
+
+<img src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/favicon.ico" style="display: none;"><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Uso de DOMPDF para generar PDF con PHP, HTML y CSS_files/saved_resource(1).html"></iframe></body></html>

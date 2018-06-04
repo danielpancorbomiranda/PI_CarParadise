@@ -1,0 +1,2 @@
+He tenido que convertir los videos descargados .mp4 normal a Full Android compatible con aTube Catcher.mp4 ya que pasaba algo con los codecs 
+puesto que se reproducia y se escuchaba pero no se veia en la web los videos.
